@@ -1,0 +1,196 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+   
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+}
+
+main{
+     width: 100%;
+    min-height: 100vh;
+display: grid;
+   grid-template-columns: 80px 1fr;
+   gap: 20px;
+   padding: 10px;
+   background-color: #000521;
+}
+
+aside{
+    background-color: #011f65;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  
+   
+    
+}
+
+aside .vento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    background-color:#0e4eb2 ;
+    width: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    gap: 30px;
+}
+
+aside .caixa_menu{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.opcao-menu a{
+text-decoration: none;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+color: #bea8a7;
+}
+
+.opcao-menu a:hover{
+   color: #fadbd8;
+}
+
+.opcao-menu span{
+    font-size: .9em;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container .background{
+    background-color: #011f65;
+    padding: 10px;
+    border-radius: 10px;
+    width: 240px;
+    display: flex;
+   align-items: center;
+   
+}
+.background input{
+    background-color: transparent;
+    border: none;
+    width: 90%;
+    outline: none;
+    color: #fff;
+    
+}
+
+
+.background input::placeholder{
+    color: #fff;
+}
+.background i{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    transition: .5s;
+
+}
+
+.background i:hover{
+background-color:#616e7c ;
+border-radius: 10px;
+color: #fff;
+
+}
+
+.infor-Cidade{
+    display: flex;
+}
+
+.resultado{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.Graus{
+    font-size: 2em;
+}
+
+.painel{
+     background-color: #011f65;
+     padding: 10px;
+     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cards{
+    display: flex;
+    gap: 10px;
+}
+.clima-Hora{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+  justify-content: center;
+    gap: 10px;
+}
+
+.clima-Hora:before{
+    position: absolute;
+    content: "";
+    top: 0px;
+    right: 0px;
+    background-color: rgb(247, 244, 244);
+    height: 100%;
+    width: 1px;
+}
+
+.codicoes{
+    display: flex;
+    gap: 10px;
+}
+
+.chancesDeChuva,.ventoKm,.Uv{
+    display: flex;
+    flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   gap: 20px;
+}
+
+.chancesDeChuva h4{
+text-align: center;
+
+}
+
+
+
+.codicoes button{
+    border:none;
+    height: 20px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e4eb2;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 10px;
+}
