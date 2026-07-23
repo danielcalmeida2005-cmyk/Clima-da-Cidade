@@ -20,7 +20,7 @@ async function buscarClima(cidade) {
 
 async function buscarPrevisao(cidade) {
     const requisicao = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${cidade}&appid=${apiKey}&units=metric&lang=pt_br`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${cidade},BR&appid=${apiKey}&units=metric&lang=pt_br`
     );
 
     return await requisicao.json();

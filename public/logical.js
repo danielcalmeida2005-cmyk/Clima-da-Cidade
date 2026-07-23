@@ -14,7 +14,7 @@ async function Clima() {
 
         console.log("Antes do fetch");
 
-        const resposta = await fetch(`http://localhost:3000/clima/${cidade}`);
+        const resposta = await fetch(`https://api-clima-ijt0.onrender.com/clima/${cidade}`);
         // console.log("Depois do fetch");
         const dados = await resposta.json();
         // console.log("Dados recebidos:");
