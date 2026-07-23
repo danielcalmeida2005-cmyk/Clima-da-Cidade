@@ -136,13 +136,14 @@ color: #fff;
     display: flex;
     flex-direction: column;
     gap: 10px;
+ 
 }
 
 .cards{
     display: flex;
     gap: 10px;
 }
-.clima-Hora{
+.climaHora{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -151,15 +152,26 @@ color: #fff;
     gap: 10px;
 }
 
-.clima-Hora:before{
+.climaHora:before{
     position: absolute;
     content: "";
     top: 0px;
-    right: 0px;
+    right: -5px;
     background-color: rgb(247, 244, 244);
     height: 100%;
     width: 1px;
 }
+.climaHora .hora{
+    font-size: .8em;
+}
+
+
+.climaHora img {
+    width: 40px;
+    height: 40px;
+}
+
+
 
 .codicoes{
     display: flex;
