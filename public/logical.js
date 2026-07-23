@@ -26,7 +26,7 @@ async function Clima() {
 
 
 
-
+cards.innerHTML = "";
         for (let i = 0; i < 4; i++) {
 
             let climaHora = document.createElement("div");
