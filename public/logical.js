@@ -2,12 +2,13 @@ let nomeCidade = document.querySelector(".Nome-Cidade h2")
 let ProbalidadeDechuva = document.querySelector(".Nome-Cidade .Probali")
 let graus = document.querySelector(".Graus")
 let cards = document.querySelector(" .painel .cards")
-async function Clima() {
+ let inputCidade = document.querySelector(".background input");
 
-    let inputCidade = document.querySelector(".background input");
+async function Clima(cidade) {
 
-    let cidade = inputCidade.value;
-
+    if(cidade === ""){
+        alert("preencha o campo")
+    }
     console.log("Cidade digitada:", cidade);
 
     try {
@@ -27,7 +28,7 @@ async function Clima() {
 
 
 cards.innerHTML = "";
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 5; i++) {
 
             let climaHora = document.createElement("div");
             let pHora = document.createElement("p");
@@ -55,9 +56,9 @@ cards.innerHTML = "";
             cards.appendChild(climaHora)
         }
 
-    let SensacaoTermica = document.querySelector(".SensacaoTermica")
+    let SensacaoTermica = document.querySelector(".feel_like")
 let PorcetagemDeChuva = document.querySelector(".PorcetagemDeChuva")
-let velocidadeDoVento = document.querySelector(".velociVento h4")
+let velocidadeDoVento = document.querySelector(".speedWind")
 let Uv = document.querySelector(".Uv h4")
 
 
@@ -72,5 +73,11 @@ velocidadeDoVento.innerHTML =`${Math.round(dados.clima.wind.speed)} Km/h`
 }
 
 let buttonCidade = document.querySelector(".background i").addEventListener("click", () => {
-    Clima()
+
+      let cidade = inputCidade.value;
+    Clima(cidade)
 })
+
+window.addEventListener("DOMContentLoaded", () => {
+    Clima("vitoria da conquista");
+});

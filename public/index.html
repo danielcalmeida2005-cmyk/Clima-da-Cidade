@@ -47,7 +47,7 @@
 
                 <div class="opcao-menu">
                     <a href="">
-                        <i class="fa-solid fa-cloud"></i>
+                        <i class="fa-regular fa-map"></i>
                         <span>
                             Maps
                         </span>
@@ -56,7 +56,7 @@
 
                 <div class="opcao-menu">
                     <a href="">
-                        <i class="fa-solid fa-cloud"></i>
+                       <i class="fa-solid fa-gear"></i>
                         <span>
                             Settings
                         </span>
@@ -100,34 +100,52 @@
 
                    
 
-                    <div class="chancesDeChuva">
+                    
+<div class="weather-details-card">
+  <!-- Item 1: Sensação Térmica -->
+  <div class="detail-item">
+    <div class="detail-icon">
+      <i class="ph ph-thermometer-simple"></i> <!-- Exemplo com Phosphor Icons ou FontAwesome -->
+    </div>
+    <div class="detail-info">
+      <span class="label">Real Feel</span>
+      <strong class="value feel_like">30°</strong>
+    </div>
+  </div>
 
-                         <div>
-                        <p> Real Feel</p>
-                        <h4 class="SensacaoTermica">30</h4>
-                    </div>
-                        <p> Chace de chuva</p>
-                        <h4 class="PorcetagemDeChuva" >0</h4>
-                    </div>
+  <!-- Item 2: Vento -->
+  <div class="detail-item">
+    <div class="detail-icon">
+      <i class="ph ph-wind"></i>
+    </div>
+    <div class="detail-info">
+      <span class="label">Vento</span>
+      <strong class="value speedWind">0.2 <small>Km/h</small></strong>
+    </div>
+  </div>
 
-                    <div class="ventoKm">
-                        <div class="velociVento">
-                            <p> <i class="fa-solid fa-wind"></i> Vento</p>
-                            <h4>0.2 Km/h</h4>
-                        </div>
+ 
+  <div class="detail-item">
+    <div class="detail-icon">
+      <i class="ph ph-cloud-rain"></i>
+    </div>
+    <div class="detail-info">
+      <span class="label">Chance de Chuva</span>
+      <strong class="value PorcetagemDeChuva">0%</strong>
+    </div>
+  </div>
 
-                        <div class="Uv">
-                            <p><i class="fa-regular fa-sun"></i> UV </p>
-                            <h4>0</h4>
-                        </div>
+  <!-- Item 4: Índice UV -->
+  <div class="detail-item">
+    <div class="detail-icon">
+      <i class="ph ph-sun"></i>
+    </div>
+    <div class="detail-info">
+      <span class="label">Índice UV</span>
+      <strong class="value">0</strong>
+    </div>
+  </div>
 
-                    </div>
-
-                    <button>
-                        mais
-                    </button>
-
-                </div>
 
             </div>
         </section>
