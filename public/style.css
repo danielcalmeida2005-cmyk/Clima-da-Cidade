@@ -9,7 +9,7 @@
      background: url(https://i.pinimg.com/1200x/af/09/4f/af094f5cf734a6434f5c9f859c36774b.jpg);
      /* background-color: #000521; */
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
   font-family: 'Courier New', Courier, monospace;
     color: #fff;
@@ -21,18 +21,20 @@
 
 
 main{
-    
+    width: 100%;
+    min-height: 100%;
 display: grid;
    grid-template-columns: 80px 1fr;
    gap: 20px;
    padding: 10px;
+  
 
 }
 
 aside{
     /* background-color: #011f65; */
 
-max-height: 445px;
+max-height: 395px;
     background-color: #0e0e0fa7;
     box-shadow: 1px 1px 5px black;
     padding: 10px;
@@ -85,7 +87,7 @@ color: #fff;
 .container{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     padding: 10px;
 }
 
@@ -118,8 +120,8 @@ color: #fff;
    display: flex;
    align-items: center;
    justify-content: center;
-    height: 30px;
-    width: 30px;
+    height: 50px;
+    width: 50px;
     border-radius: 10px;
     transition: .5s;
 
@@ -143,16 +145,17 @@ color: #fff;
 }
 .resultado h2{
     text-shadow: 1px 2px 1px black;
-    font-size: 1.6em;
+    font-size: 1.2em;
+    
 }
 
 .resultado p{
     text-shadow: 1px 2px 1px black;
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: 500;
 }
 .Graus{
-    font-size: 2em;
+    font-size: 2.3em;
 }
 
 .painel{
@@ -162,15 +165,20 @@ color: #fff;
      padding: 10px;
      border-radius: 10px;
     display: flex;
-    flex-direction: column;
     
+    flex-direction: column;
     gap: 10px;
  
 }
 
+.painel p{
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
 .cards{
     display: flex;
-    gap: 13px;
+    gap: 10px;
 }
 .climaHora{
     position: relative;
@@ -178,7 +186,7 @@ color: #fff;
     flex-direction: column;
    align-items: center;
   justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .climaHora:before{
@@ -202,15 +210,11 @@ color: #fff;
 }
 
 
-
 .weather-details-card {
  
   border-radius: 16px;
-  
   color: #ffffff;
   font-family: 'Inter', sans-serif; 
-  
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px 16px; 
@@ -238,14 +242,15 @@ color: #fff;
   flex-direction: column;
 }
 
+
 .detail-info .label {
-  font-size: 12px;
+  font-size: 1.3em;
   color: #b0c4de; 
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .detail-info .value {
-  font-size: 18px;
+  font-size: 1.3em;
   font-weight: 700;
   margin-top: 2px;
 }

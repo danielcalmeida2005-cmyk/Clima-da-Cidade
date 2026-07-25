@@ -30,7 +30,7 @@ async function Clima(cidade) {
 
 
         cards.innerHTML = "";
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 4; i++) {
 
             let climaHora = document.createElement("div");
             let pHora = document.createElement("p");
