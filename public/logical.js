@@ -2,11 +2,13 @@ let nomeCidade = document.querySelector(".Nome-Cidade h2")
 let ProbalidadeDechuva = document.querySelector(".Nome-Cidade .Probali")
 let graus = document.querySelector(".Graus")
 let cards = document.querySelector(" .painel .cards")
- let inputCidade = document.querySelector(".background input");
+let inputCidade = document.querySelector(".background input");
+
+let body = document.querySelector("body")
 
 async function Clima(cidade) {
 
-    if(cidade === ""){
+    if (cidade === "") {
         alert("preencha o campo")
     }
     console.log("Cidade digitada:", cidade);
@@ -27,7 +29,7 @@ async function Clima(cidade) {
 
 
 
-cards.innerHTML = "";
+        cards.innerHTML = "";
         for (let i = 0; i < 5; i++) {
 
             let climaHora = document.createElement("div");
@@ -56,17 +58,17 @@ cards.innerHTML = "";
             cards.appendChild(climaHora)
         }
 
-    let SensacaoTermica = document.querySelector(".feel_like")
-let PorcetagemDeChuva = document.querySelector(".PorcetagemDeChuva")
-let velocidadeDoVento = document.querySelector(".speedWind")
-let Uv = document.querySelector(".Uv h4")
+        let SensacaoTermica = document.querySelector(".feel_like")
+        let PorcetagemDeChuva = document.querySelector(".PorcetagemDeChuva")
+        let velocidadeDoVento = document.querySelector(".speedWind")
+        let Uv = document.querySelector(".Uv h4")
 
 
-SensacaoTermica.innerHTML = Math.round(dados.clima.main.feels_like);
-PorcetagemDeChuva.innerHTML = `${dados.previsao.list[0].pop * 100}%`;
+        SensacaoTermica.innerHTML = Math.round(dados.clima.main.feels_like);
+        PorcetagemDeChuva.innerHTML = `${dados.previsao.list[0].pop * 100}%`;
 
-velocidadeDoVento.innerHTML =`${Math.round(dados.clima.wind.speed)} Km/h`
-}
+        velocidadeDoVento.innerHTML = `${Math.round(dados.clima.wind.speed)} Km/h`
+    }
     catch (error) {
         console.log("ERRO:", error);
     }
@@ -74,10 +76,32 @@ velocidadeDoVento.innerHTML =`${Math.round(dados.clima.wind.speed)} Km/h`
 
 let buttonCidade = document.querySelector(".background i").addEventListener("click", () => {
 
-      let cidade = inputCidade.value;
+    let cidade = inputCidade.value;
     Clima(cidade)
 })
 
 window.addEventListener("DOMContentLoaded", () => {
     Clima("vitoria da conquista");
 });
+
+
+async function mostraImagem() {
+    try {
+        const url = "https://picsum.photos/1920/1080";
+
+        const img = new Image();
+
+        await new Promise((resolve, reject) => {
+            img.onload = resolve;
+            img.onerror = reject;
+            img.src = url;
+        });
+
+        document.body.style.backgroundImage = `url(${img.src})`;
+
+    } catch (erro) {
+        console.log("Erro ao carregar a imagem:", erro);
+    }
+}
+
+mostraImagem();

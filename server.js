@@ -5,10 +5,14 @@ require("dotenv").config();
 
 const apiKey = process.env.OPENWEATHER_KEY;
 
+
 const cors = require("cors");
 const app = express()
 app.use(cors());
 app.use(express.static("public"));
+
+
+
 
 async function buscarClima(cidade) {
     const requisicao = await fetch(
@@ -26,6 +30,9 @@ async function buscarPrevisao(cidade) {
     return await requisicao.json();
 }
 
+
+
+
 app.get("/clima/:cidade", async (req, res) => {
     const clima = await buscarClima(req.params.cidade);
  const previsao = await buscarPrevisao(req.params.cidade);
@@ -35,9 +42,15 @@ console.log("Rota nova executada");
     res.json({
       previsao,
       clima
+
        
     });
 });
+
+
+
+
+
 
 const PORT = process.env.PORT || 3000;
 

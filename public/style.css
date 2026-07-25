@@ -4,24 +4,37 @@
     box-sizing: border-box;
 }
 
-body{
-   
-    font-family: 'Courier New', Courier, monospace;
+
+   body {
+     background: url(https://i.pinimg.com/1200x/af/09/4f/af094f5cf734a6434f5c9f859c36774b.jpg);
+     /* background-color: #000521; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  font-family: 'Courier New', Courier, monospace;
     color: #fff;
+
+   width: 100%;
+    min-height: 100vh;
 }
+  
+
 
 main{
-     width: 100%;
-    min-height: 100vh;
+    
 display: grid;
    grid-template-columns: 80px 1fr;
    gap: 20px;
    padding: 10px;
-   background-color: #000521;
+
 }
 
 aside{
-    background-color: #011f65;
+    /* background-color: #011f65; */
+
+max-height: 445px;
+    background-color: #0e0e0fa7;
+    box-shadow: 1px 1px 5px black;
     padding: 10px;
     border-radius: 10px;
     display: flex;
@@ -58,11 +71,11 @@ display: flex;
 flex-direction: column;
 align-items: center;
 gap: 10px;
-color: #bea8a7;
+color: #fff;
 }
 
 .opcao-menu a:hover{
-   color: #fadbd8;
+   color: rgb(194, 194, 194);
 }
 
 .opcao-menu span{
@@ -73,20 +86,23 @@ color: #bea8a7;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 10px;
 }
 
 .container .background{
-    background-color: #011f65;
+  background-color: #0e0e0fa7;
+      box-shadow: 1px 1px 5px black;
     padding: 10px;
     border-radius: 10px;
     width: auto;
     min-width: 240px;
     display: flex;
    align-items: center;
-   
+ 
 }
 .background input{
     background-color: transparent;
+  
     border: none;
     width: 90%;
     outline: none;
@@ -125,24 +141,36 @@ color: #fff;
     flex-direction: column;
     gap: 13px;
 }
+.resultado h2{
+    text-shadow: 1px 2px 1px black;
+    font-size: 1.6em;
+}
 
+.resultado p{
+    text-shadow: 1px 2px 1px black;
+    font-size: 1.2em;
+    font-weight: 500;
+}
 .Graus{
     font-size: 2em;
 }
 
 .painel{
-     background-color: #011f65;
+     /* background-color: #011f6562; */
+   box-shadow: 1px 1px 5px black;
+     background-color: #0e0e0fa7;
      padding: 10px;
      border-radius: 10px;
     display: flex;
     flex-direction: column;
+    
     gap: 10px;
  
 }
 
 .cards{
     display: flex;
-    gap: 10px;
+    gap: 13px;
 }
 .climaHora{
     position: relative;
@@ -163,7 +191,8 @@ color: #fff;
     width: 1px;
 }
 .climaHora .hora{
-    font-size: .8em;
+    font-size: 1.2em;
+    font-weight: 700;
 }
 
 
