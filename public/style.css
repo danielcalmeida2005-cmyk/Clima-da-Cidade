@@ -71,6 +71,7 @@ display: grid;
    grid-template-columns: 80px 1fr;
    gap: 20px;
    padding: 10px;
+   
   
 
 }
@@ -83,6 +84,7 @@ aside{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     gap: 40px;
   
    
@@ -155,21 +157,17 @@ color: #fff;
     width: 90%;
     outline: none;
     color: #fff;
-    
+      font-size: 1.3em;
 }
 
 
 .background input::placeholder{
     color: #fff;
-
-
-    font-size: 1em;
     font-family: "Inter", sans-serif;
-
-    font-size: 1.6em;
+   
 
 }
-.background i{
+.fa-magnifying-glass{
    display: flex;
    align-items: center;
    justify-content: center;
@@ -347,4 +345,158 @@ color: #fff;
 .detail-info .value small {
   font-size: 12px;
   font-weight: 400;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+
+main{
+  align-items: center;  
+}
+
+
+    aside{
+        height: 95%;
+        width: 100px;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "search search"
+            "cidade cidade"
+            "painel details";
+
+        gap: 10px;
+        padding: 20px;
+    }
+    .background input{
+  
+      font-size: 2em;
+}
+
+.fa-magnifying-glass{
+  
+    font-size: 2em;
+   
+
+}
+
+
+
+    .resultado h2{
+    text-shadow: 1px 2px 1px black;
+    font-size:3em;
+    
+}
+
+.resultado p{
+   
+    font-size: 2em;
+    
+}
+.Graus{
+    font-size: 2.5em;
+     
+}
+
+
+    .background {
+        grid-area: search;
+    }
+
+
+    .infor-Cidade {
+        grid-area: cidade;
+    }
+
+
+    .painel {
+        grid-area: painel;
+    }
+
+
+    .Details {
+        grid-area: details;
+    }
+
+
+    .painel,
+    .Details {
+        padding: 25px;
+        height: 320px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .painel{
+        display: flex;
+        justify-content: space-between;
+    }
+
+   
+    .painel > p {
+        font-size: 3em;
+        margin-bottom: 50px;
+    }
+
+
+  
+    .cards {
+        gap: 20px;
+    }
+
+
+    .cards  {
+        min-width: 100px;
+      height: 100px;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+
+    .cards  img {
+        width: 100px;
+        height: 100px;
+    }
+
+
+    .cards a span {
+        font-size: 1.3rem;
+    }
+
+
+    /* Details */
+    .weather-details-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        
+    }
+
+
+    .detail-item {
+        padding: 20px;
+        min-height: 120px;
+        border-radius: 20px;
+        background-color: #c7ccd256;
+    }
+
+
+    .detail-icon {
+        font-size: 2.5rem;
+    }
+
+
+    .label {
+        font-size: 1.1rem;
+    }
+
+
+    .value {
+        font-size: 2rem;
+    }
 }
