@@ -25,7 +25,7 @@ async function Clima(cidade) {
 
         nomeCidade.innerHTML = dados.clima.name;
         graus.innerHTML = `${Math.round(dados.clima.main.temp)}°C`;
-        ProbalidadeDechuva.innerHTML = `Chances de chuva ${dados.previsao.list[0].pop * 100}%`;
+        ProbalidadeDechuva.innerHTML = `Chance of Rain ${dados.previsao.list[0].pop * 100}%`;
 
 
 
@@ -64,7 +64,7 @@ async function Clima(cidade) {
         let Uv = document.querySelector(".Uv h4")
 
 
-        SensacaoTermica.innerHTML = Math.round(dados.clima.main.feels_like);
+        SensacaoTermica.innerHTML = `${Math.round(dados.clima.main.feels_like)} °`;
         PorcetagemDeChuva.innerHTML = `${dados.previsao.list[0].pop * 100}%`;
 
         velocidadeDoVento.innerHTML = `${Math.round(dados.clima.wind.speed)} Km/h`
