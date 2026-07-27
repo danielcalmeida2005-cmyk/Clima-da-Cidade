@@ -35,7 +35,7 @@ strong{
 }
 
 body {
-  
+  position: relative;
      background: url(https://i.pinimg.com/1200x/af/09/4f/af094f5cf734a6434f5c9f859c36774b.jpg);
      background: url(https://i.pinimg.com/1200x/af/09/4f/af094f5cf734a6434f5c9f859c36774b.jpg);
     
@@ -58,7 +58,6 @@ body {
 
 main{
     width: 100%;
-
     min-height: 100%;
 display: grid;
    grid-template-columns: 80px 1fr;
@@ -501,4 +500,58 @@ main{
     .value {
         font-size: 2rem;
     }
+}
+
+.conteudo{
+    
+    backdrop-filter: blur(10px);
+    width: 0px;
+    padding: 10px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+   display: none;
+    flex-direction: column;
+gap: 10px; 
+overflow-y: scroll;
+transition: 4s;
+}
+
+
+.conteudo.aparece{
+   width: 300px; 
+   display: flex;
+   transition: 1s;
+}
+
+.conteudo h2{
+    text-align: center;
+    margin: 10px;
+}
+
+.historico-container{
+   display: flex;
+    flex-direction: column;
+gap: 40px;  }
+
+.card-historico{
+    background-color: #616e7c;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card-topo{
+    display: flex;
+    
+    gap: 5px;
+}
+
+.card-baixo{
+    display: flex;
+    gap: 10px;
 }

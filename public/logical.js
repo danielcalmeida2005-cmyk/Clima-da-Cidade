@@ -1,10 +1,30 @@
+//  Data
+
+const data = new Date();
+
+const dia = String(data.getDate()).padStart(2, "0");
+const mes = String(data.getMonth() + 1).padStart(2, "0");
+const ano = data.getFullYear();
+
+const DataCompleta = `${dia}/${mes}/${ano}`;
+
+// 
+
+// Hora
+
+let Horas = new Date()
+let hora = Horas.getHours()
+let minutos = Horas.getMinutes()
+
+let horaCompleta = `${hora}:${minutos}`
+
 const menus = [
     // Menu principal
     {
         menu: "principal",
-        nome: "Clima",
+        nome: "Historico",
         icone: "fa-solid fa-cloud",
-        evento: "clima"
+        evento: "Historico"
     },
 
     {
@@ -47,15 +67,15 @@ const menus = [
         evento: "voltar"
     }
 ];
+
 // Menu do Aside
 let opcoesMenu = document.querySelectorAll(".opcao-menu")
-
-let nuvem = document.querySelector(".nuvem")
+let historicoMenu = document.querySelector(".Historico")
 let option = document.querySelector(".option")
 let maps = document.querySelector(".maps")
 let settings = document.querySelector(".settings")
 let menuPrincipal = "principal";
-
+// 
 function carregarMenu(acao) {
     menuPrincipal = acao;
 
@@ -93,8 +113,8 @@ function executarAcao(acao) {
             carregarMenu("principal");
             break;
 
-        case "clima":
-
+        case "Historico":
+            Historico()
             break;
 
         case "maps":
@@ -102,7 +122,7 @@ function executarAcao(acao) {
             break;
 
         case "salvar":
-            salvadados()
+            salvarDados(dados)
             break
         case "tema":
 
@@ -113,16 +133,76 @@ function executarAcao(acao) {
             break;
     }
 }
-
+let conteudo = document.querySelector(".conteudo")
+let containerHistorico = document.querySelector(".historico-container")
 let GuardarDados = []
-function salvadados(resposta) {
-console.log(resposta)
+function Historico() {
+
+    containerHistorico.innerHTML = "";
+
+    GuardarDados.forEach(item => {
+
+        const card = document.createElement("div");
+        card.className = "card-historico";
 
 
+       
+        const cidade = document.createElement("h3");
+        cidade.innerText = item.cidade;
+
+        const topo = document.createElement("div");
+        topo.className = "card-topo";
+
+        
+
+        const clima = document.createElement("strong")
+        clima.innerText = item.condicao
+        const temperatura = document.createElement("strong");
+        temperatura.innerText = `${item.temperatura}°C`;
+
+        const baixo = document.createElement("div");
+        baixo.className = "card-baixo";
+
+        const data = document.createElement("span");
+        data.innerText = item.data;
+
+        const hora = document.createElement("span");
+        hora.innerText = item.hora;
+
+
+        topo.appendChild(temperatura);
+        topo.appendChild(clima);
+        baixo.appendChild(data);
+        baixo.appendChild(hora);
+        card.appendChild(cidade);
+        card.appendChild(topo);
+        card.appendChild(baixo);
+
+        containerHistorico.appendChild(card);
+    });
+
+conteudo.classList.toggle("aparece")
 }
 
 
 
+
+function salvarDados(resposta) {
+
+
+    let clima = {
+        cidade: resposta.clima.name,
+        data: DataCompleta,
+        hora: horaCompleta,
+        temperatura: resposta.clima.main.temp,
+        condicao: resposta.clima.weather[0].main,
+        icone: resposta.clima.weather[0].icon
+    };
+
+    GuardarDados.push(clima)
+    console.log(GuardarDados)
+
+}
 
 
 function abrirMaps() {
@@ -146,13 +226,12 @@ let graus = document.querySelector(".Graus")
 let cards = document.querySelector(" .painel .cards")
 let inputCidade = document.querySelector(".background input");
 
-let body = document.querySelector("body")
-
-
+let dados;
 async function Clima(cidade) {
 
     if (cidade === "") {
         alert("preencha o campo")
+        return
     }
     console.log("Cidade digitada:", cidade);
 
@@ -162,8 +241,10 @@ async function Clima(cidade) {
 
         const resposta = await fetch(`https://api-clima-ijt0.onrender.com/clima/${cidade}`);
         // console.log("Depois do fetch");
-        const dados = await resposta.json();
+        dados = await resposta.json();
         // console.log("Dados recebidos:");
+        salvarDados(dados)
+
         console.log(dados);
 
         nomeCidade.innerHTML = dados.clima.name;
@@ -215,13 +296,15 @@ async function Clima(cidade) {
     catch (error) {
         console.log("ERRO:", error);
     }
+
 }
 
 let buttonCidade = document.querySelector(".background i").addEventListener("click", () => {
 
     let cidade = inputCidade.value;
+
     Clima(cidade)
- salvadados(dados)
+
 
 })
 
