@@ -1,7 +1,6 @@
 //  Data
 
 const data = new Date();
-
 const dia = String(data.getDate()).padStart(2, "0");
 const mes = String(data.getMonth() + 1).padStart(2, "0");
 const ano = data.getFullYear();
@@ -14,7 +13,7 @@ const DataCompleta = `${dia}/${mes}/${ano}`;
 
 let Horas = new Date()
 let hora = Horas.getHours()
-let minutos = Horas.getMinutes()
+let minutos = String(Horas.getMinutes()).padStart(2, "0");
 
 let horaCompleta = `${hora}:${minutos}`
 
@@ -22,14 +21,14 @@ const menus = [
     // Menu principal
     {
         menu: "principal",
-        nome: "Historico",
+        nome: "history",
         icone: "fa-solid fa-cloud",
         evento: "Historico"
     },
 
     {
         menu: "principal",
-        nome: "Salva",
+        nome: "Save",
         icone: "fa-solid fa-map-location-dot",
         evento: "salvar"
     },
@@ -41,7 +40,7 @@ const menus = [
     },
     {
         menu: "principal",
-        nome: "Configurações",
+        nome: "Settings",
         icone: "fa-solid fa-gear",
         evento: "configuracoes"
     },
@@ -49,20 +48,20 @@ const menus = [
     // Menu de configurações
     {
         menu: "configuracoes",
-        nome: "Tema",
+        nome: "theme",
         icone: "fa-solid fa-palette",
         evento: "tema"
     },
 
     {
         menu: "configuracoes",
-        nome: "Idioma",
+        nome: "Language",
         icone: "fa-solid fa-language",
         evento: "idioma"
     },
     {
         menu: "configuracoes",
-        nome: "Voltar",
+        nome: "Back",
         icone: "fa-solid fa-arrow-left",
         evento: "voltar"
     }
@@ -136,6 +135,7 @@ function executarAcao(acao) {
 let conteudo = document.querySelector(".conteudo")
 let containerHistorico = document.querySelector(".historico-container")
 let GuardarDados = []
+
 function Historico() {
 
     containerHistorico.innerHTML = "";
@@ -145,18 +145,24 @@ function Historico() {
         const card = document.createElement("div");
         card.className = "card-historico";
 
+        // Primeira div
+        const imagem = document.createElement("img");
+        imagem.src = item.icone
+        imagem.className = "card-imagem";
 
-       
+        // Segunda div
+        const inforcard = document.createElement("div");
+        inforcard.className = "card-conteudo";
+
         const cidade = document.createElement("h3");
         cidade.innerText = item.cidade;
 
         const topo = document.createElement("div");
         topo.className = "card-topo";
 
-        
+        const clima = document.createElement("strong");
+        clima.innerText = item.condicao;
 
-        const clima = document.createElement("strong")
-        clima.innerText = item.condicao
         const temperatura = document.createElement("strong");
         temperatura.innerText = `${item.temperatura}°C`;
 
@@ -169,26 +175,32 @@ function Historico() {
         const hora = document.createElement("span");
         hora.innerText = item.hora;
 
-
         topo.appendChild(temperatura);
         topo.appendChild(clima);
+
         baixo.appendChild(data);
         baixo.appendChild(hora);
-        card.appendChild(cidade);
-        card.appendChild(topo);
-        card.appendChild(baixo);
+
+        // Tudo fica dentro da div de conteúdo
+        inforcard.appendChild(cidade);
+        inforcard.appendChild(topo);
+        inforcard.appendChild(baixo);
+
+        // As duas divs ficam dentro do card
+        card.appendChild(imagem);
+        card.appendChild(inforcard);
 
         containerHistorico.appendChild(card);
     });
 
-conteudo.classList.toggle("aparece")
+    conteudo.classList.toggle("aparece");
+
+
+
 }
 
 
-
-
 function salvarDados(resposta) {
-
 
     let clima = {
         cidade: resposta.clima.name,
@@ -196,11 +208,11 @@ function salvarDados(resposta) {
         hora: horaCompleta,
         temperatura: resposta.clima.main.temp,
         condicao: resposta.clima.weather[0].main,
-        icone: resposta.clima.weather[0].icon
+        icone: `https://openweathermap.org/img/wn/${resposta.clima.weather[0].icon}@2x.png`
     };
 
     GuardarDados.push(clima)
-    console.log(GuardarDados)
+
 
 }
 
@@ -219,6 +231,73 @@ function abrirMaps() {
 }
 
 
+function informacoesAdicionais(resposta) {
+
+    let moreinfor = document.querySelector(".more-infor")
+
+    moreinfor.innerHTML = ""
+
+
+
+   
+
+    moreinfor.innerHTML = ""
+
+  const cards = [
+    {
+        nome: "Umidade",
+        valor: resposta.clima.main.humidity + "%",
+        icone: "fa-solid fa-droplet"
+    },
+    {
+        nome: "Vento",
+        valor: resposta.clima.wind.speed + " m/s",
+        icone: "fa-solid fa-wind"
+    },
+    {
+        nome: "Pressão",
+        valor: resposta.clima.main.pressure + " hPa",
+        icone: "fa-solid fa-gauge-high"
+    },
+    {
+        nome: "Visibilidade",
+        valor: (resposta.clima.visibility / 1000) + " km",
+        icone: "fa-solid fa-eye"
+    }
+];
+
+    cards.forEach(item => {
+
+
+        let DivMoreInfor = document.createElement("div")
+      DivMoreInfor.classList.add("DivMoreInfor")
+        let icone = document.createElement("i")
+        icone.className = item.icone
+        let Divinfor = document.createElement("div")
+        let h3Nome = document.createElement("h3")
+        h3Nome.innerText = item.nome
+        let number = document.createElement("strong")
+        number.innerText = item.valor
+
+
+
+        moreinfor.appendChild(DivMoreInfor)
+        DivMoreInfor.appendChild(icone)
+        DivMoreInfor.appendChild(Divinfor)
+
+        Divinfor.appendChild(h3Nome)
+        Divinfor.appendChild(number)
+
+
+
+    })
+     
+}
+
+
+
+
+
 // 
 let nomeCidade = document.querySelector(".Nome-Cidade h2")
 let ProbalidadeDechuva = document.querySelector(".Nome-Cidade .Probali")
@@ -233,18 +312,16 @@ async function Clima(cidade) {
         alert("preencha o campo")
         return
     }
-    console.log("Cidade digitada:", cidade);
+
 
     try {
 
-        console.log("Antes do fetch");
-
         const resposta = await fetch(`https://api-clima-ijt0.onrender.com/clima/${cidade}`);
-        // console.log("Depois do fetch");
-        dados = await resposta.json();
-        // console.log("Dados recebidos:");
-        salvarDados(dados)
 
+        dados = await resposta.json();
+
+        salvarDados(dados)
+        informacoesAdicionais(dados)
         console.log(dados);
 
         nomeCidade.innerHTML = dados.clima.name;

@@ -36,22 +36,16 @@ strong{
 
 body {
   position: relative;
-     background: url(https://i.pinimg.com/1200x/af/09/4f/af094f5cf734a6434f5c9f859c36774b.jpg);
-     background: url(https://i.pinimg.com/1200x/af/09/4f/af094f5cf734a6434f5c9f859c36774b.jpg);
-    
-   
+     background:url(https://i.pinimg.com/1200x/af/09/4f/af094f5cf734a6434f5c9f859c36774b.jpg);
+     background:url(https://i.pinimg.com/1200x/af/09/4f/af094f5cf734a6434f5c9f859c36774b.jpg);
+overflow-y: hidden;
     background-position: top;
     background-repeat: no-repeat;
   font-family: 'Courier New', Courier, monospace;
     color: #fff;
-
     width: 100%;
-   width: 100%;
     min-height: 100vh;
-
-
-   width: 100%;
-   min-height: 100vh;
+  
 
 }
   
@@ -61,7 +55,7 @@ main{
     min-height: 100%;
 display: grid;
    grid-template-columns: 80px 1fr;
-   gap: 20px;
+   gap: 10px;
    padding: 10px;
 
 }
@@ -90,14 +84,14 @@ aside .vento{
     border-radius: 10px;
     padding: 10px;
     color: #fff;
-    gap: 30px;
+   
 }
 
 aside .caixa_menu{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:40px;
+    gap:20px;
 }
 
 .opcao-menu button{
@@ -143,7 +137,7 @@ transform: rotate(180deg);
 .container .background{
   background-color: #0e0e0fa7;
       box-shadow: 1px 1px 5px black;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     width: auto;
     min-width: 240px;
@@ -153,7 +147,7 @@ transform: rotate(180deg);
 }
 .background input{
     background-color: transparent;
-  padding: 10px;
+  padding: 5px;
     border: none;
     width: 90%;
     outline: none;
@@ -186,10 +180,6 @@ color: #fff;
 
 }
 
-.infor-Cidade{
-    display: flex;
-   
-}
 
 
 .Graus {
@@ -199,13 +189,7 @@ color: #fff;
 }
 
 
-.painel {
-    
-    box-shadow: 1px 1px 5px black;
-    background-color: #0e0e0fa7;
-    padding: 10px;
-    border-radius: 10px;
- }
+
 .resultado p{
     text-shadow: 1px 2px 1px black;
     font-size: 1.5em;
@@ -215,14 +199,7 @@ color: #fff;
     font-size: 2.3em;
 }
 
-.painel{
-    
-   box-shadow: 1px 1px 5px black;
-     background-color: #0e0e0fa7;
-     padding: 10px;
-     border-radius: 10px;
 
-  }
 .resultado{
 
     display: flex;
@@ -233,6 +210,7 @@ color: #fff;
 .resultado h2{
     text-shadow: 1px 2px 1px black;
     font-size: 2em;
+    
     
 }
 
@@ -246,6 +224,30 @@ color: #fff;
      text-shadow: 1px 2px 1px black;
 }
 
+
+    .more-infor{
+        display: none;
+        justify-content: space-between;
+        padding: 10px;
+        gap: 10px;
+    }
+    /* .DivMoreInfor{
+        background-color: #0e4eb2;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    } */
+
+
+.painel {
+    
+    box-shadow: 1px 1px 5px black;
+    background-color: #0e0e0fa7;
+    padding: 5px;
+    
+ }
 
 
 .painel p{
@@ -265,7 +267,7 @@ color: #fff;
     flex-direction: column;
    align-items: center;
   justify-content: center;
-    gap: 20px;
+    gap: 5px;
     margin:0px 0px 0px 10px;
 }
 
@@ -350,13 +352,16 @@ color: #fff;
 
 @media (min-width: 1024px) and (max-width: 1440px) {
 
+    
+
 main{
-  align-items: center;  
+  align-items: center;
+  gap: 20px;  
 }
 
 
     aside{
-        height: 95%;
+        height: 97%;
         width: 100px;
     }
     .container {
@@ -366,10 +371,11 @@ main{
         grid-template-areas:
             "search search"
             "cidade cidade"
+            "more-infor more-infor"
             "painel details";
 
         gap: 10px;
-        padding: 20px;
+        padding: 10px;
     }
     .background input{
   
@@ -383,7 +389,10 @@ main{
 
 }
 
-
+.resultado{
+    display: flex;
+   
+}
 
     .resultado h2{
     text-shadow: 1px 2px 1px black;
@@ -398,6 +407,7 @@ main{
 }
 .Graus{
     font-size: 2.5em;
+    
      
 }
 
@@ -411,6 +421,7 @@ main{
         grid-area: cidade;
     }
 
+    
 
     .painel {
         grid-area: painel;
@@ -422,51 +433,75 @@ main{
     }
 
 
+    .more-infor{
+      
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    .DivMoreInfor{
+        background-color: #071833;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
     .painel,
     .Details {
-        padding: 25px;
-        height: 320px;
+        height: 240px;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 20px;
+    
+        gap: 10px;
     }
 
     .painel{
-        display: flex;
-        justify-content: space-between;
+        padding: 0px 10px 30px 10px;
     }
+
+  .Details{
+    padding: 10px;
+  }
 
    
     .painel > p {
-        font-size: 3em;
-        margin-bottom: 50px;
+        font-size: 2.4em;
+        margin-bottom: 40px;
+        
     }
 
 
+  .climaHora:not(:last-child)::before {
   
-    .cards {
-        gap: 20px;
-    }
-
+    right: -40px;
+    
+    width: 3px;
+}
+   
 
     .cards  {
-        min-width: 100px;
-      height: 100px;
-        padding: 20px;
+        min-width: 80px;
+      height: 80px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         border-radius: 20px;
     }
 
 
     .cards  img {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
 
 
     .cards a span {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
 
@@ -474,14 +509,14 @@ main{
     .weather-details-card {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 25px;
+        gap: 10px;
         
     }
 
 
     .detail-item {
-        padding: 20px;
-        min-height: 120px;
+        padding: 10px;
+        min-height: 100px;
         border-radius: 20px;
         background-color: #c7ccd256;
     }
@@ -503,31 +538,38 @@ main{
 }
 
 .conteudo{
-    
+    border: 3px solid white;
     backdrop-filter: blur(10px);
     width: 0px;
     padding: 10px;
     height: 100%;
     position: absolute;
     right: 0;
+    top: 0;
     z-index: 1000;
    display: none;
     flex-direction: column;
-gap: 10px; 
+gap: 20px; 
 overflow-y: scroll;
 transition: 4s;
 }
 
 
 .conteudo.aparece{
-   width: 300px; 
+   width: 400px; 
    display: flex;
+  
+   align-items:center ;
    transition: 1s;
+   
 }
+
+
+
 
 .conteudo h2{
     text-align: center;
-    margin: 10px;
+    margin: 5px;
 }
 
 .historico-container{
@@ -537,14 +579,24 @@ gap: 40px;  }
 
 .card-historico{
     background-color: #616e7c;
-    height: 100px;
+    height: auto;
+    width: 360px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 10px;
     padding: 10px;
     border-radius: 10px;
 }
 
+.card-imagem{
+    font-size: 1.2em;
+}
+
+.card-conteudo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .card-topo{
     display: flex;
     
