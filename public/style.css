@@ -208,19 +208,19 @@ color: #fff;
 
 
     .more-infor{
-        display: flex;
+        display: none;
         justify-content: space-between;
         padding: 10px;
         gap: 10px;
     }
-    .DivMoreInfor{
+    /* .DivMoreInfor{
         background-color: #0e4eb2;
         border-radius: 10px;
         display: flex;
         align-items: center;
         gap: 10px;
         padding: 10px;
-    }
+    } */
 
 
 .painel {
@@ -235,6 +235,7 @@ color: #fff;
 .painel p{
     font-size: 1.5em;
     font-weight: 600;
+    margin:5px 0px 30px 20px;
    
 }
 
@@ -331,6 +332,45 @@ color: #fff;
   font-size: 12px;
   font-weight: 400;
 }
+
+
+
+.conteudo{
+    border: 3px solid white;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    width: 0px;
+    padding: 10px;
+    height: 100%;
+    position: absolute;
+    transform: translateX(210px);
+    z-index: 1000;
+   display: none;
+    flex-direction: column;
+gap: 20px; 
+overflow-y: scroll;
+transition: 4s;
+}
+
+
+
+
+.conteudo.aparece{
+   width: 400px; 
+   display: flex;
+
+   align-items:center ;
+   transition: 1s;
+   
+}
+
+
+
+
+
+
+
+
 
 @media (min-width: 1024px) and (max-width: 1440px) {
 
