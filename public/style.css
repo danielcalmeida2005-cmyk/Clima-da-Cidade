@@ -182,24 +182,6 @@ color: #fff;
 
 
 
-.Graus {
-    font-size: 2.3em;
-    text-shadow: 1px 2px 1px black;
-    
-}
-
-
-
-.resultado p{
-    text-shadow: 1px 2px 1px black;
-    font-size: 1.5em;
-    font-weight: 600;
-}
-.Graus{
-    font-size: 2.3em;
-}
-
-
 .resultado{
 
     display: flex;
@@ -226,19 +208,19 @@ color: #fff;
 
 
     .more-infor{
-        display: none;
+        display: flex;
         justify-content: space-between;
         padding: 10px;
         gap: 10px;
     }
-    /* .DivMoreInfor{
+    .DivMoreInfor{
         background-color: #0e4eb2;
         border-radius: 10px;
         display: flex;
         align-items: center;
         gap: 10px;
         padding: 10px;
-    } */
+    }
 
 
 .painel {
