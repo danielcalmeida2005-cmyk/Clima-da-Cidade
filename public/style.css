@@ -37,21 +37,12 @@ strong{
 body {
   position: relative;
      background: url(https://i.pinimg.com/1200x/af/09/4f/af094f5cf734a6434f5c9f859c36774b.jpg);
-     background: url(https://i.pinimg.com/1200x/af/09/4f/af094f5cf734a6434f5c9f859c36774b.jpg);
-    
-   
     background-position: top;
     background-repeat: no-repeat;
   font-family: 'Courier New', Courier, monospace;
     color: #fff;
-
     width: 100%;
-   width: 100%;
     min-height: 100vh;
-
-
-   width: 100%;
-   min-height: 100vh;
 
 }
   
@@ -191,45 +182,17 @@ color: #fff;
    
 }
 
-
-
-.Graus {
-    font-size: 2.3em;
-    text-shadow: 1px 2px 1px black;
-    
+.more-infor{
+    display: none;
 }
 
 
-.painel {
-    
-    box-shadow: 1px 1px 5px black;
-    background-color: #0e0e0fa7;
-    padding: 10px;
-    border-radius: 10px;
- }
-.resultado p{
-    text-shadow: 1px 2px 1px black;
-    font-size: 1.5em;
-    font-weight: 600;
-}
-.Graus{
-    font-size: 2.3em;
-}
-
-.painel{
-    
-   box-shadow: 1px 1px 5px black;
-     background-color: #0e0e0fa7;
-     padding: 10px;
-     border-radius: 10px;
-
-  }
 
 .resultado{
 
     display: flex;
     flex-direction: column;
-    gap: 13px;
+    gap: 10px;
    
 }
 .resultado h2{
@@ -248,7 +211,14 @@ color: #fff;
      text-shadow: 1px 2px 1px black;
 }
 
+.painel{
+    
+   box-shadow: 1px 1px 5px black;
+     background-color: #0e0e0fa7;
+     padding: 10px;
+     border-radius: 10px;
 
+  }
 
 .painel p{
     font-size: 1.5em;
@@ -260,7 +230,7 @@ color: #fff;
 .cards{
     display: flex;
       align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 .climaHora{
     position: relative;
@@ -268,7 +238,7 @@ color: #fff;
     flex-direction: column;
    align-items: center;
   justify-content: center;
-    gap: 20px;
+    gap: 8px;
     margin:0px 0px 0px 10px;
 }
 
@@ -351,43 +321,110 @@ color: #fff;
   font-weight: 400;
 }
 
-
-
-.conteudo{
-    border: 3px solid white;
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    width: 0px;
-    padding: 10px;
-    height: 100%;
-    position: absolute;
-    transform: translateX(210px);
-    z-index: 1000;
-   display: none;
-    flex-direction: column;
-gap: 20px; 
-overflow-y: scroll;
-transition: 4s;
+.historico-container{
+    width:100%;
+    display:flex;
+flex-direction: column;
+gap: 10px;
+   
+  
+    
 }
 
+.conteudo{
+    position:fixed;
+    top:10px;
+    right:10px;
+    bottom:10px;
+display: flex;
+flex-direction: column;
+padding: 10px;
+    width:380px;
+
+    transform:translateX(100%);
+    opacity:0;
+    visibility:hidden;
+
+    background:rgba(15,15,20,.7);
+    backdrop-filter:blur(18px);
+border-radius: 20px;
+    transition:.4s;
+}
 
 
 
 .conteudo.aparece{
-   width: 400px; 
-   display: flex;
-
-   align-items:center ;
-   transition: 1s;
-   
+    transform:translateX(0);
+    opacity:1;
+    visibility:visible;
+    display:flex;
 }
 
 
 
 
+.card-historico{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    width:100%;
 
+    padding:16px;
 
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
 
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+
+    transition:.3s;
+}
+
+.card-historico:hover{
+    transform:translateY(-2px);
+    border-color:#4da3ff;
+    background:rgba(255,255,255,.12);
+}
+
+.card-imagem{
+    width:70px;
+    height:70px;
+}
+
+.card-conteudo{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    width:100%;
+}
+
+.card-conteudo h3{
+    font-size:1.2rem;
+    color:#fff;
+}
+
+.card-topo{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.card-topo strong:first-child{
+    font-size:1.4rem;
+    color:#fff;
+}
+
+.card-topo strong:last-child{
+    color:#8ec5ff;
+    font-weight:600;
+}
+
+.card-baixo{
+    display:flex;
+    justify-content:space-between;
+    color:#bdbdbd;
+    font-size:.9rem;
+}
 
 
 @media (min-width: 1024px) and (max-width: 1440px) {
@@ -544,69 +581,10 @@ main{
     }
 }
 
-.conteudo{
-    border: 3px solid white;
-    backdrop-filter: blur(10px);
-    width: 0px;
-    padding: 10px;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1000;
-   display: none;
-    flex-direction: column;
-gap: 20px; 
-overflow-y: scroll;
-transition: 4s;
-}
 
-
-.conteudo.aparece{
-   width: 400px; 
-   display: flex;
-   align-items:center ;
-   transition: 1s;
-   
-}
 
 .conteudo h2{
     text-align: center;
     margin: 10px;
 }
 
-.historico-container{
-   display: flex;
-    
-gap: 40px;  }
-
-.card-historico{
-    background-color: #616e7c;
-    height: auto;
-    width: 360px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.card-imagem{
-    font-size: 1.2em;
-}
-
-.card-conteudo{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.card-topo{
-    display: flex;
-    
-    gap: 5px;
-}
-
-.card-baixo{
-    display: flex;
-    gap: 10px;
-}
