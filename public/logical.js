@@ -1,3 +1,9 @@
+
+let body = document.querySelector("body")
+
+// body.addEventListener("click",()=>{
+//      conteudo.classList.remove("aparece");
+// })
 //  Data
 
 const data = new Date();
@@ -9,13 +15,7 @@ const DataCompleta = `${dia}/${mes}/${ano}`;
 
 // 
 
-// Hora
 
-let Horas = new Date()
-let hora = Horas.getHours()
-let minutos = String(Horas.getMinutes()).padStart(2, "0");
-
-let horaCompleta = `${hora}:${minutos}`
 
 const menus = [
     // Menu principal
@@ -67,6 +67,37 @@ const menus = [
     }
 ];
 
+function executarAcao(acao) {
+    switch (acao) {
+        case "configuracoes":
+            carregarMenu("configuracoes");
+            break;
+
+        case "Historico":
+            Historico()
+            break;
+
+        case "maps":
+            abrirMaps();
+            break;
+
+        case "salvar":
+            salvarDados(dados)
+            break
+        case "tema":
+            menuTema()
+            break;
+
+        case "idioma":
+
+            break;
+
+        case "voltar":
+            carregarMenu("principal");
+            break;
+    }
+}
+
 // Menu do Aside
 let opcoesMenu = document.querySelectorAll(".opcao-menu")
 let historicoMenu = document.querySelector(".Historico")
@@ -102,39 +133,48 @@ opcoesMenu.forEach((botao, index) => {
     });
 });
 
-function executarAcao(acao) {
-    switch (acao) {
-        case "configuracoes":
-            carregarMenu("configuracoes");
-            break;
 
-        case "voltar":
-            carregarMenu("principal");
-            break;
-
-        case "Historico":
-            Historico()
-            break;
-
-        case "maps":
-            abrirMaps();
-            break;
-
-        case "salvar":
-            salvarDados(dados)
-            break
-        case "tema":
-
-            break;
-
-        case "idioma":
-
-            break;
-    }
-}
 let conteudo = document.querySelector(".conteudo")
 let containerHistorico = document.querySelector(".historico-container")
 let GuardarDados = []
+
+
+
+function pegarHora() {
+    const agora = new Date();
+
+    let hora = agora.getHours();
+    let minuto = agora.getMinutes();
+
+    minuto = String(minuto).padStart(2, "0");
+    hora = String(hora).padStart(2, "0");
+
+    return `${hora}:${minuto}`;
+}
+
+
+
+function salvarDados() {
+    console.log(dados)
+    const horaAtual = pegarHora()
+    let clima = {
+        cidade: dados.clima.name,
+        data: DataCompleta,
+        hora: horaAtual,
+        temperatura: Math.round(dados.clima.main.temp),
+        condicao: dados.clima.weather[0].main,
+        icone: `https://openweathermap.org/img/wn/${dados.clima.weather[0].icon}@2x.png`
+    };
+
+    GuardarDados.push(clima)
+
+
+}
+
+
+
+
+
 
 function Historico() {
 
@@ -200,21 +240,6 @@ function Historico() {
 }
 
 
-function salvarDados(resposta) {
-
-    let clima = {
-        cidade: resposta.clima.name,
-        data: DataCompleta,
-        hora: horaCompleta,
-        temperatura: resposta.clima.main.temp,
-        condicao: resposta.clima.weather[0].main,
-        icone: `https://openweathermap.org/img/wn/${resposta.clima.weather[0].icon}@2x.png`
-    };
-
-    GuardarDados.push(clima)
-
-
-}
 
 
 function abrirMaps() {
@@ -239,38 +264,38 @@ function informacoesAdicionais(resposta) {
 
 
 
-   
+
 
     moreinfor.innerHTML = ""
 
-  const cards = [
-    {
-        nome: "Umidade",
-        valor: resposta.clima.main.humidity + "%",
-        icone: "fa-solid fa-droplet"
-    },
-    {
-        nome: "Vento",
-        valor: resposta.clima.wind.speed + " m/s",
-        icone: "fa-solid fa-wind"
-    },
-    {
-        nome: "Pressão",
-        valor: resposta.clima.main.pressure + " hPa",
-        icone: "fa-solid fa-gauge-high"
-    },
-    {
-        nome: "Visibilidade",
-        valor: (resposta.clima.visibility / 1000) + " km",
-        icone: "fa-solid fa-eye"
-    }
-];
+    const cards = [
+        {
+            nome: "Umidade",
+            valor: resposta.clima.main.humidity + "%",
+            icone: "fa-solid fa-droplet"
+        },
+        {
+            nome: "Vento",
+            valor: resposta.clima.wind.speed + " m/s",
+            icone: "fa-solid fa-wind"
+        },
+        {
+            nome: "Pressão",
+            valor: resposta.clima.main.pressure + " hPa",
+            icone: "fa-solid fa-gauge-high"
+        },
+        {
+            nome: "Visibilidade",
+            valor: (resposta.clima.visibility / 1000) + " km",
+            icone: "fa-solid fa-eye"
+        }
+    ];
 
     cards.forEach(item => {
 
 
         let DivMoreInfor = document.createElement("div")
-      DivMoreInfor.classList.add("DivMoreInfor")
+        DivMoreInfor.classList.add("DivMoreInfor")
         let icone = document.createElement("i")
         icone.className = item.icone
         let Divinfor = document.createElement("div")
@@ -291,10 +316,110 @@ function informacoesAdicionais(resposta) {
 
 
     })
-     
+
+}
+
+// Tema 
+const temas = [
+    {
+        nome: "Azul",
+        fundo: "linear-gradient(135deg, #0F2027 0%, #2C5364 50%, #00C6FF 100%)",
+        painel: "#D9ECFF",
+        texto: "#172033",
+        destaque: "#00C6FF"
+    },
+
+    {
+        nome: "Cinza",
+        fundo: "linear-gradient(135deg, #232526 0%, #414345 50%, #7F8C8D 100%)",
+        painel: "#DEE1E5",
+        texto: "#202124",
+        destaque: "#AAB2B8"
+    },
+
+    {
+        nome: "Verde",
+        fundo: "linear-gradient(135deg, #0B3D2E 0%, #126E51 50%, #00C878 100%)",
+        painel: "#D6F0E3",
+        texto: "#17352A",
+        destaque: "#00C878"
+    },
+
+    {
+        nome: "Roxo",
+        fundo: "linear-gradient(135deg, #240046 0%, #5A189A 50%, #9D4EDD 100%)",
+        painel: "#E3DAFF",
+        texto: "#2B2145",
+        destaque: "#9D4EDD"
+    }
+];
+
+let caixa = document.createElement("div");
+caixa.classList.add("caixaMenu");
+
+let setaParaCima = document.createElement("i");
+setaParaCima.className = "fa-solid fa-chevron-up";
+setaParaCima.classList.add("setaparacima");
+
+let setaParaBaixo = document.createElement("i");
+setaParaBaixo.className = "fa-solid fa-chevron-down";
+setaParaBaixo.classList.add("setaparabaixo");
+
+let PTema = document.createElement("p");
+PTema.classList.add("Ptema")
+PTema.innerText = "Padrao"
+
+caixa.appendChild(setaParaCima);
+caixa.appendChild(PTema);
+caixa.appendChild(setaParaBaixo);
+
+body.appendChild(caixa);
+
+
+
+
+function menuTema() {
+    caixa.classList.toggle("MenuAparece");
 }
 
 
+let posicaoAtual = 1
+let temaAtual ;
+setaParaCima.addEventListener("click",()=>{
+    if(posicaoAtual < temas.length - 1 ){
+       posicaoAtual++  
+    }
+  
+   atualizarTema()
+})
+
+setaParaBaixo.addEventListener("click",()=>{
+
+    if(posicaoAtual > 0){
+      posicaoAtual--  
+    }
+   atualizarTema()
+})
+
+
+function atualizarTema(){
+    temaAtual = temas[posicaoAtual];
+console.log(posicaoAtual)
+body.style.background = temaAtual.fundo
+PTema.innerText = temaAtual.nome
+PTema.style.color = temaAtual.destaque
+}
+
+
+
+
+
+//  cria o card e setas,trasnfom
+
+// cria uma funcao que vai pecorre os valores
+// croia dois button que faz um for menos leghnt para sabe se vai mostra o valor de cima ou de baixo
+// cria uma funcao que atualiza as imagem
+// um evento de click na imagem selecionada
 
 
 
@@ -320,7 +445,7 @@ async function Clima(cidade) {
 
         dados = await resposta.json();
 
-        salvarDados(dados)
+
         informacoesAdicionais(dados)
         console.log(dados);
 

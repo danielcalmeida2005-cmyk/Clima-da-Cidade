@@ -36,7 +36,7 @@ strong{
 
 body {
   position: relative;
-     background: url(https://i.pinimg.com/1200x/af/09/4f/af094f5cf734a6434f5c9f859c36774b.jpg);
+  
     background-position: top;
     background-repeat: no-repeat;
   font-family: 'Courier New', Courier, monospace;
@@ -283,6 +283,9 @@ color: #fff;
   display: flex;
   align-items: center;
   gap: 12px; 
+  background-color: #c7ccd256;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 
@@ -427,6 +430,35 @@ border-radius: 20px;
 }
 
 
+
+
+/* Menu Tema */
+.caixaMenu {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 80px;
+    left: 50px;
+
+    background-color: #091828;
+    width: 70px;
+    height: 100px;
+    transform: translateX(50px);
+    border-radius: 20px;
+}
+
+.caixaMenu.MenuAparece{
+display: flex;
+}
+
+.Ptema{
+
+font-weight: 700;
+    margin: 10px 0px 10px 0px;
+}
+
 @media (min-width: 1024px) and (max-width: 1440px) {
 
 main{
@@ -503,49 +535,80 @@ main{
 
     .painel,
     .Details {
-        padding: 25px;
-        height: 320px;
+        padding: 10px;
+        height: auto;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 20px;
+        
     }
 
     .painel{
         display: flex;
-        justify-content: space-between;
+      justify-content: space-around;
+
+     
+       
+
     }
 
    
     .painel > p {
         font-size: 3em;
-        margin-bottom: 50px;
+     margin: -40px 0px 0px 10px;
     }
 
 
+
+    .climaHora{
+   align-items: center;
+  justify-content: center;
+   
+   
+}
+
+.climaHora:not(:last-child)::before {
+    position: absolute;
+    content: "";
+    top: 0px;
+    right: -20px;
+    background-color: rgb(247, 244, 244);
+    border-radius: 30px;
+    height: 90%;
+    width: 3px;
+}
   
-    .cards {
-        gap: 20px;
-    }
-
+   
 
     .cards  {
         min-width: 100px;
       height: 100px;
-        padding: 20px;
-        border-radius: 20px;
+       
+        border-radius: 20px; 
+        justify-content: space-between;
+       
+    }
+
+ .cards .hora{
+        font-size: 2em;
+        background-color: #b0c4de4d;
+        border-radius: 10px;
+        padding: 10px;
     }
 
 
-    .cards  img {
-        width: 100px;
-        height: 100px;
-    }
+    .cards img{
+    width: 70px;
+    height: 70px;
+   
+}
 
-
+.cards .temperatura{
+    font-size: 2em;
+}
     .cards a span {
-        font-size: 1.3rem;
+        font-size: 2rem;
     }
 
 
@@ -560,7 +623,6 @@ main{
 
     .detail-item {
         padding: 20px;
-        min-height: 120px;
         border-radius: 20px;
         background-color: #c7ccd256;
     }
@@ -571,20 +633,22 @@ main{
     }
 
 
-    .label {
-        font-size: 1.1rem;
-    }
-
-
-    .value {
+   .detail-info .label {
         font-size: 2rem;
     }
-}
 
 
+  .detail-info  .value {
+        font-size: 2em;
+    }
 
-.conteudo h2{
+    .conteudo h2{
     text-align: center;
     margin: 10px;
 }
+
+}
+
+
+
 
