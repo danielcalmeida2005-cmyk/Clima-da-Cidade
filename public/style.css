@@ -433,33 +433,65 @@ border-radius: 20px;
 
 
 /* Menu Tema */
+
+
 .caixaMenu {
     position: fixed;
     display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    top: 80px;
-    left: 50px;
-
-    background-color: #091828;
-    width:150px;
-    height: 120px;
-    padding: 10px;
-    transform: translateX(50px);
+    top: 70px;
+    left: 100px;
+    gap: 12px;
+    background: rgba(18, 18, 24, 0.65); /* Fundo escuro translúcido */
+    backdrop-filter: blur(10px); /* Efeito fOSCO/vidro */
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 20px;
-  
+    padding: 6px 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
+
+
+.caixaMenu:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+.Ptema {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    user-select: none;
+}
+
+
+.caixaMenu i {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Destaque ao passar o mouse na seta */
+.caixaMenu i:hover {
+    color: #00d2ff; /* Tom azul neon para combinar com os detalhes do dashboard */
+    transform: scale(1.15);
+}
+
 
 .caixaMenu.MenuAparece{
 display: flex;
 }
 
 .setaparacima{
-    font-size: 1.5em;
+    font-size: 2em;
 }
 .setaparabaixo{
-    font-size: 1.5em;
+    font-size: 2em;
 }
 .Ptema{
     font-size: 1.6em;
