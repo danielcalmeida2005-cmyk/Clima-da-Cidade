@@ -351,6 +351,11 @@ const temas = [
         painel: "#E3DAFF",
         texto: "#2B2145",
         destaque: "#9D4EDD"
+    },
+
+    {
+        nome: "Aleatório",
+        fundo: mostraImagem
     }
 ];
 
@@ -367,7 +372,7 @@ setaParaBaixo.classList.add("setaparabaixo");
 
 let PTema = document.createElement("p");
 PTema.classList.add("Ptema")
-PTema.innerText = "Padrao"
+
 
 caixa.appendChild(setaParaCima);
 caixa.appendChild(PTema);
@@ -383,7 +388,7 @@ function menuTema() {
 }
 
 
-let posicaoAtual = 1
+let posicaoAtual = 0
 let temaAtual ;
 setaParaCima.addEventListener("click",()=>{
     if(posicaoAtual < temas.length - 1 ){
@@ -408,6 +413,12 @@ console.log(posicaoAtual)
 body.style.background = temaAtual.fundo
 PTema.innerText = temaAtual.nome
 PTema.style.color = temaAtual.destaque
+
+ if (typeof temaAtual.fundo === "function") {
+        temaAtual.fundo();
+    } else {
+        body.style.background = temaAtual.fundo;
+    }
 }
 
 

@@ -347,7 +347,7 @@ padding: 10px;
     transform:translateX(100%);
     opacity:0;
     visibility:hidden;
-
+overflow-y: scroll;
     background:rgba(15,15,20,.7);
     backdrop-filter:blur(18px);
 border-radius: 20px;
@@ -443,18 +443,26 @@ border-radius: 20px;
     left: 50px;
 
     background-color: #091828;
-    width: 70px;
-    height: 100px;
+    width:150px;
+    height: 120px;
+    padding: 10px;
     transform: translateX(50px);
     border-radius: 20px;
+  
 }
 
 .caixaMenu.MenuAparece{
 display: flex;
 }
 
+.setaparacima{
+    font-size: 1.5em;
+}
+.setaparabaixo{
+    font-size: 1.5em;
+}
 .Ptema{
-
+    font-size: 1.6em;
 font-weight: 700;
     margin: 10px 0px 10px 0px;
 }
@@ -645,6 +653,16 @@ main{
     .conteudo h2{
     text-align: center;
     margin: 10px;
+}
+
+
+.caixaMenu {
+    left: 70px;
+
+
+    transform: translateX(50px);
+   
+  
 }
 
 }
