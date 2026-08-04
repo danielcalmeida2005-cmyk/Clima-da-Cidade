@@ -51,27 +51,27 @@ console.log("Rota nova executada");
 
 // Rota para banco de dados
 
-const db = require("./database/db")
+// const db = require("./database/db")
 
-db.exec(`CREATE TABLE NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT,nome TEXT,email TEXT UNIQUE,senha TEXT)`)
-
-
-app.post("/cadastro",(req,res)=>{
-
-const { nome, email, senha } = req.body;
-
-const comando = db.prepare(` INSERT INTO usuarios (nome,email,senha)
-    VALUEs (?,?,?)
-    `)
-
-comando.run(nome, email, senha);
-
-res.json({
-    mensagem:"usuario cadastrado com sucesso"
-})
+// db.exec(`CREATE TABLE NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT,nome TEXT,email TEXT UNIQUE,senha TEXT)`)
 
 
-})
+// app.post("/cadastro",(req,res)=>{
+
+// const { nome, email, senha } = req.body;
+
+// const comando = db.prepare(` INSERT INTO usuarios (nome,email,senha)
+//     VALUEs (?,?,?)
+//     `)
+
+// comando.run(nome, email, senha);
+
+// res.json({
+//     mensagem:"usuario cadastrado com sucesso"
+// })
+
+
+// })
 
 
 
