@@ -7,6 +7,7 @@ let buttonEnviar = document.querySelector(".enviar")
 
 buttonEnviar.addEventListener("click",(e)=>{
      e.preventDefault();
+     
       if (validaDados()) {
         enviarDados();
     }
@@ -56,5 +57,6 @@ body: JSON.stringify({
 })
     });
      
+    let dados = await respostadoBack.json()
 
 }
