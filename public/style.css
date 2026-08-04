@@ -61,12 +61,12 @@ section h1{
 form{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 label{
     color: var(--text);
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .campoInput{
@@ -81,7 +81,7 @@ label{
     border-radius: 8px;
     padding: 10px;
     display: flex;
-    gap: 10px;
+    gap: 20px;
   transition: .3s;
   align-items: center;
 }
@@ -174,7 +174,7 @@ left: -14px;
     font-size: 18px;
     position: relative;
     text-align: center;
-    margin:10px 0px 10px 0px;
+    margin:30px 0px 20px 0px;
 }
 
 .continue::before{
@@ -189,7 +189,7 @@ right: -14px;
 
 
 .altenative{
-    margin-top: auto;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -217,8 +217,9 @@ right: -14px;
 }
 
 .create{
-    margin-top:20px;
+    margin-top:30px;
     text-align: center;
+    font-size: 1.2em;
 }
 
 .create a{
