@@ -47,6 +47,14 @@ console.log("Rota nova executada");
     });
 });
 
+// Fazer login
+app.post("/login",(req,res)=>{
+    const {email,senha} = req.body
+
+    res.json({
+        mensagem:"errro"
+    })
+})
 
 
 // Rota para banco de dados
