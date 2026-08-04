@@ -41,13 +41,17 @@ main{
 
 section{
    background:var(--card); 
- 
+ display: flex;
+ flex-direction: column;
+
+ justify-content: center;
    height: 100vh;
    width: 100%;
    padding: 10px;
 }
 section h1{
     text-align: center;
+    margin-bottom: 30px;
 }
 
 
@@ -111,7 +115,7 @@ transition: .4s;
 }
 
 .campoButton{
-   position: relative;
+ 
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -121,13 +125,13 @@ transition: .4s;
 
 .enviar i{
     position: absolute;
-   top: 20px;
-   right: 20px;
+   top: 10px;
+   right: 10px;
    font-size: 1.5em;
 }
 
 
-.enviar{
+.enviar{position: relative;
     background:var(--primary);
     width: 300px;
     height: 40px;
