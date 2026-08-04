@@ -26,7 +26,7 @@
 
 body{
     width: 100%;
-   
+   overflow-x: hidden;
     color: #fff;
 }
 
@@ -44,14 +44,15 @@ section{
  display: flex;
  flex-direction: column;
 
- justify-content: center;
-   height: 100vh;
+ 
+   min-height: 100vh;
    width: 100%;
-   padding: 10px;
+   padding: 20px;
 }
 section h1{
     text-align: center;
     margin-bottom: 30px;
+    font-size:2rem;
 }
 
 
@@ -64,7 +65,7 @@ form{
 
 label{
     color: var(--text);
-    font-size: 1.2em;
+    font-size: 1rem;
 }
 
 .campoInput{
@@ -81,6 +82,7 @@ label{
     display: flex;
     gap: 10px;
   transition: .3s;
+  align-items: center;
 }
 
 .input:hover{
@@ -92,15 +94,23 @@ label{
 .input:focus-within{
     border-color: rgb(207, 86, 0);
 }
+
+.input i{
+    font-size: 1.1em;
+}
 input{
     border: none;
     background-color: transparent;
         outline: none;
+        height: auto;
+        width: 100%;
+        
 }
 
 
 input::placeholder{
     color: #fff;
+    font-size: 1.2em;
 }
 
 .campoInput a{
@@ -108,6 +118,8 @@ text-align: end;
 color: white;
 text-decoration: none;
 transition: .4s;
+margin: 0px 0px 10px 0px;
+font-size: 1.1em;
 }
 
 .campoInput a:hover{
@@ -125,18 +137,20 @@ transition: .4s;
 
 .enviar i{
     position: absolute;
-   top: 10px;
+   top: 9px;
    right: 10px;
-   font-size: 1.5em;
+   font-size: 20px;
 }
 
 
-.enviar{position: relative;
+.enviar{
+    position: relative;
     background:var(--primary);
     width: 300px;
     height: 40px;
     border: none;
     font-weight: 700;
+    font-size: 18px;
     border-radius: 8px;
     transition: .7s;
 }
@@ -151,11 +165,12 @@ transition: .4s;
     position: absolute;
     content: "";
     top: 50%;
-left: -5px;
+left: -14px;
     width: 30%;
     height: 1px;
 }
 .continue{
+    font-size: 18px;
     position: relative;
     text-align: center;
     margin:20px 0px 30px 0px;
@@ -166,7 +181,7 @@ left: -5px;
     position: absolute;
     content: "";
     top: 50%;
-right: -5px;
+right: -14px;
     width: 30%;
     height: 1px;
 }
@@ -201,7 +216,7 @@ right: -5px;
 }
 
 .create{
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: center;
 }
 
