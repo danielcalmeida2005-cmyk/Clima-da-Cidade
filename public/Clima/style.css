@@ -1,0 +1,703 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+
+h2, label, input, p,h3,span,strong {
+    font-family: "Inter", sans-serif;
+}
+
+
+h2 {
+    font-weight: 700;
+}
+
+span{
+    font-weight: 500;
+}
+
+input{
+    font-weight: 400;
+}
+h3{
+    font-weight: 800;
+}
+
+p{
+    font-weight: 500;
+}
+
+strong{
+    font-weight: 700;
+}
+
+body {
+  position: relative;
+  
+    background-position: top;
+    background-repeat: no-repeat;
+  font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    max-height: 100vh;
+
+}
+  
+
+main{
+    width: 100%;
+    min-height: 100%;
+display: grid;
+   grid-template-columns: 80px 1fr;
+   gap: 20px;
+   padding: 10px;
+
+}
+
+aside{
+    background-color: #0e0e0fa7;
+    box-shadow: 1px 1px 5px black;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  
+   
+    
+}
+
+aside .vento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    background-color:#0e4eb2 ;
+    width: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    color: #fff;
+    gap: 30px;
+}
+
+aside .caixa_menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:40px;
+}
+
+.opcao-menu button{
+border: none;
+background-color: transparent;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 10px;
+color: #fff;
+}
+
+.opcao-menu button:hover{
+   color: rgb(194, 194, 194);
+}
+
+.opcao-menu i{
+    font-size: 1.5em;
+}
+
+.opcao-menu span{
+    font-size: .9em;
+    font-weight: 700;
+}
+
+.settings i {
+    transition: transform 0.3s ease;
+    transform: rotate(-180deg);
+}
+
+.settings.rotacao i{
+transform: rotate(180deg);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.container .background{
+  background-color: #0e0e0fa7;
+      box-shadow: 1px 1px 5px black;
+    padding: 10px;
+    border-radius: 10px;
+    width: auto;
+    min-width: 240px;
+    display: flex;
+   align-items: center;
+ 
+}
+.background input{
+    background-color: transparent;
+  padding: 10px;
+    border: none;
+    width: 90%;
+    outline: none;
+    color: #fff;
+      font-size: 1.3em;
+}
+
+
+.background input::placeholder{
+    color: #fff;
+    font-family: "Inter", sans-serif;
+   
+
+}
+.fa-magnifying-glass{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    transition: .5s;
+
+}
+
+.background i:hover{
+background-color:#616e7c ;
+border-radius: 10px;
+color: #fff;
+
+}
+
+.infor-Cidade{
+    display: flex;
+   
+}
+
+.more-infor{
+    display: none;
+}
+
+
+
+.resultado{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   
+}
+.resultado h2{
+    text-shadow: 1px 2px 1px black;
+    font-size: 2em;
+    
+}
+
+.resultado p{
+    text-shadow: 1px 2px 1px black;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.Graus{
+    font-size: 2.3em;
+     text-shadow: 1px 2px 1px black;
+}
+
+.painel{
+    
+   box-shadow: 1px 1px 5px black;
+     background-color: #0e0e0fa7;
+     padding: 10px;
+     border-radius: 10px;
+
+  }
+
+.painel p{
+    font-size: 1.5em;
+    font-weight: 600;
+    margin:5px 0px 30px 20px;
+   
+}
+
+.cards{
+    display: flex;
+      align-items: center;
+    gap: 5px;
+}
+.climaHora{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+  justify-content: center;
+    gap: 8px;
+    margin:0px 0px 0px 10px;
+}
+
+.climaHora:not(:last-child)::before {
+    position: absolute;
+    content: "";
+    top: 0px;
+    right: -10px;
+    background-color: rgb(247, 244, 244);
+    height: 100%;
+    width: 2px;
+}
+.climaHora .hora{
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+
+.climaHora img {
+    width: 40px;
+    height: 40px;
+}
+
+
+.climaHora .temperatura{
+    font-size: 1.5em;
+     font-weight: 700;
+}
+
+.weather-details-card {
+ 
+  border-radius: 16px;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif; 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 16px; 
+}
+
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+  background-color: #c7ccd256;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+
+.detail-icon {
+  font-size: 24px;
+  color: #a0c4ff; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+ 
+}
+
+
+.detail-info .label {
+  font-size: 1.6em;
+  color: #b0c4de; 
+  font-weight: 600;
+}
+
+
+.detail-info .value {
+  font-size: 1.6em;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.detail-info .value small {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.historico-container{
+    width:100%;
+    display:flex;
+flex-direction: column;
+gap: 10px;
+   
+  
+    
+}
+
+.conteudo{
+    position:fixed;
+    top:10px;
+    right:10px;
+    bottom:10px;
+display: flex;
+flex-direction: column;
+padding: 10px;
+    width:380px;
+
+    transform:translateX(100%);
+    opacity:0;
+    visibility:hidden;
+overflow-y: scroll;
+    background:rgba(15,15,20,.7);
+    backdrop-filter:blur(18px);
+border-radius: 20px;
+    transition:.4s;
+}
+
+
+
+.conteudo.aparece{
+    transform:translateX(0);
+    opacity:1;
+    visibility:visible;
+    display:flex;
+}
+
+
+
+
+.card-historico{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    width:100%;
+
+    padding:16px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+
+    transition:.3s;
+}
+
+.card-historico:hover{
+    transform:translateY(-2px);
+    border-color:#4da3ff;
+    background:rgba(255,255,255,.12);
+}
+
+.card-imagem{
+    width:70px;
+    height:70px;
+}
+
+.card-conteudo{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    width:100%;
+}
+
+.card-conteudo h3{
+    font-size:1.2rem;
+    color:#fff;
+}
+
+.card-topo{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.card-topo strong:first-child{
+    font-size:1.4rem;
+    color:#fff;
+}
+
+.card-topo strong:last-child{
+    color:#8ec5ff;
+    font-weight:600;
+}
+
+.card-baixo{
+    display:flex;
+    justify-content:space-between;
+    color:#bdbdbd;
+    font-size:.9rem;
+}
+
+
+
+
+/* Menu Tema */
+
+
+.caixaMenu {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 70px;
+    left: 100px;
+    gap: 12px;
+    background: rgba(18, 18, 24, 0.65); /* Fundo escuro translúcido */
+    backdrop-filter: blur(10px); /* Efeito fOSCO/vidro */
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 6px 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+
+.caixaMenu:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+.Ptema {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    user-select: none;
+}
+
+
+.caixaMenu i {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Destaque ao passar o mouse na seta */
+.caixaMenu i:hover {
+    color: #00d2ff; /* Tom azul neon para combinar com os detalhes do dashboard */
+    transform: scale(1.15);
+}
+
+
+.caixaMenu.MenuAparece{
+display: flex;
+}
+
+.setaparacima{
+    font-size: 2em;
+}
+.setaparabaixo{
+    font-size: 2em;
+}
+.Ptema{
+    font-size: 1.6em;
+font-weight: 700;
+    margin: 10px 0px 10px 0px;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+
+main{
+  align-items: center;  
+}
+
+
+    aside{
+        height: 95%;
+        width: 100px;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "search search"
+            "cidade cidade"
+            "painel details";
+
+        gap: 10px;
+        padding: 20px;
+    }
+    .background input{
+  
+      font-size: 2em;
+}
+
+.fa-magnifying-glass{
+  
+    font-size: 2em;
+   
+
+}
+
+
+
+    .resultado h2{
+    text-shadow: 1px 2px 1px black;
+    font-size:3em;
+    
+}
+
+.resultado p{
+   
+    font-size: 2em;
+    
+}
+.Graus{
+    font-size: 2.5em;
+     
+}
+
+
+    .background {
+        grid-area: search;
+    }
+
+
+    .infor-Cidade {
+        grid-area: cidade;
+    }
+
+
+    .painel {
+        grid-area: painel;
+    }
+
+
+    .Details {
+        grid-area: details;
+    }
+
+
+    .painel,
+    .Details {
+        padding: 10px;
+        height: auto;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    .painel{
+        display: flex;
+      justify-content: space-around;
+
+     
+       
+
+    }
+
+   
+    .painel > p {
+        font-size: 3em;
+     margin: -40px 0px 0px 10px;
+    }
+
+
+
+    .climaHora{
+   align-items: center;
+  justify-content: center;
+   
+   
+}
+
+.climaHora:not(:last-child)::before {
+    position: absolute;
+    content: "";
+    top: 0px;
+    right: -20px;
+    background-color: rgb(247, 244, 244);
+    border-radius: 30px;
+    height: 90%;
+    width: 3px;
+}
+  
+   
+
+    .cards  {
+        min-width: 100px;
+      height: 100px;
+       
+        border-radius: 20px; 
+        justify-content: space-between;
+       
+    }
+
+ .cards .hora{
+        font-size: 2em;
+        background-color: #b0c4de4d;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+
+    .cards img{
+    width: 70px;
+    height: 70px;
+   
+}
+
+.cards .temperatura{
+    font-size: 2em;
+}
+    .cards a span {
+        font-size: 2rem;
+    }
+
+
+    /* Details */
+    .weather-details-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        
+    }
+
+
+    .detail-item {
+        padding: 20px;
+        border-radius: 20px;
+        background-color: #c7ccd256;
+    }
+
+
+    .detail-icon {
+        font-size: 2.5rem;
+    }
+
+
+   .detail-info .label {
+        font-size: 2rem;
+    }
+
+
+  .detail-info  .value {
+        font-size: 2em;
+    }
+
+    .conteudo h2{
+    text-align: center;
+    margin: 10px;
+}
+
+
+.caixaMenu {
+    left: 70px;
+
+
+    transform: translateX(50px);
+   
+  
+}
+
+}
+
+
+
+
