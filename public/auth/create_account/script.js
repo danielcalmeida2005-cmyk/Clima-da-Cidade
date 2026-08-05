@@ -62,7 +62,17 @@ const divsenha = document.querySelector(".senha");
           senha:valorsenha.value 
         })
     })
-    let dados = await resposta.json()
 
-    console.log(dados);
+  let dados = await resposta.json();
+
+console.log(dados)
+if(dados.estado === true){
+    window.location.href = "public/Clima/index.html"
+}
+
+    valoremail.value = ""
+    valorsenha.value = ""
+    confirmasenha.value = ""
+
+
  }

@@ -59,9 +59,11 @@ const db = require("./database/db")
 
 db.exec(`CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT,nome TEXT,email TEXT UNIQUE,senha TEXT)`)
 
-
+console.log("SERVIDOR ATUALIZADO");
 // create account
 app.post("/cadastro",(req,res)=>{
+
+     console.log("ROTA CADASTRO NOVA");
 console.log(req.body);
 const {email, senha } = req.body;
 
@@ -70,17 +72,20 @@ const comando = db.prepare(` INSERT INTO usuarios (email,senha)
     `)
 
 comando.run(email, senha);
+console.log("Salvou no banco");
 
-res.json({
+res.json({teste:"funcionou",
+    estado:true,
     mensagem:"usuario cadastrado com sucesso"
+   
+ 
+})
+  return
+
+  
 })
 
 
-})
-
-// const usuarios = db.prepare("SELECT * FROM usuarios").all();
-
-// console.log(usuarios);
 
 // Fazer login
 app.post("/login",(req,res)=>{
