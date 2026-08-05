@@ -49,14 +49,38 @@ console.log("Rota nova executada");
 
 
 // Cria uma conta
-app.post("/create",(req,res)=>{
-    const {email,senha} = req.body
 
-    res.json({
-        mensagem:"errro"
-    })
+
+
+
+// Rota para banco de dados
+
+const db = require("./database/db")
+
+db.exec(`CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT,nome TEXT,email TEXT UNIQUE,senha TEXT)`)
+
+
+// create account
+app.post("/cadastro",(req,res)=>{
+console.log(req.body);
+const {email, senha } = req.body;
+
+const comando = db.prepare(` INSERT INTO usuarios (email,senha)
+    VALUES (?,?)
+    `)
+
+comando.run(email, senha);
+
+res.json({
+    mensagem:"usuario cadastrado com sucesso"
 })
 
+
+})
+
+// const usuarios = db.prepare("SELECT * FROM usuarios").all();
+
+// console.log(usuarios);
 
 // Fazer login
 app.post("/login",(req,res)=>{
@@ -66,35 +90,6 @@ app.post("/login",(req,res)=>{
         mensagem:"errro"
     })
 })
-
-
-
-
-// Rota para banco de dados
-
-// const db = require("./database/db")
-
-// db.exec(`CREATE TABLE NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT,nome TEXT,email TEXT UNIQUE,senha TEXT)`)
-
-
-// app.post("/cadastro",(req,res)=>{
-
-// const { nome, email, senha } = req.body;
-
-// const comando = db.prepare(` INSERT INTO usuarios (nome,email,senha)
-//     VALUEs (?,?,?)
-//     `)
-
-// comando.run(nome, email, senha);
-
-// res.json({
-//     mensagem:"usuario cadastrado com sucesso"
-// })
-
-
-// })
-
-
 
 
 const PORT = process.env.PORT || 3000;
