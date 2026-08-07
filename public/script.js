@@ -27,7 +27,7 @@ if (valorEmail === "") {
     return
 }
 else{
-    if(!regextEmail.test(valorEmail)){
+    if(!regexEmail.test(valorEmail)){
         return
     }
 }
@@ -48,7 +48,7 @@ if (valorSenha === "") {
 
 async function enviarDados() {
  
-    let respostadoBack = await fetch('/login',{
+    let respostadoBack = await fetch('https://api-clima-ijt0.onrender.com/login',{
         method: "POST",
         header:{"content-Type":"application/json"},
 body: JSON.stringify({
@@ -58,5 +58,11 @@ body: JSON.stringify({
     });
      
     let dados = await respostadoBack.json()
+
+if (dados.estado === true) {
+    setTimeout(() => {
+        window.location.href = "https://api-clima-ijt0.onrender.com/Clima/index.html";
+    }, 3000);
+}
 
 }

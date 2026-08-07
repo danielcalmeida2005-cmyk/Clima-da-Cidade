@@ -80,7 +80,11 @@ res.json({teste:"funcionou",
    
  
 })
-  return
+
+
+
+
+
 
   
 })
@@ -91,9 +95,21 @@ res.json({teste:"funcionou",
 app.post("/login",(req,res)=>{
     const {email,senha} = req.body
 
-    res.json({
-        mensagem:"errro"
-    })
+    const usuario = db.prepare(`SELECT * FROM usuarios
+        WHERE email = ? AND senha = ?`
+    ).get(email,senha)
+
+    if (usuario) {
+        res.json({
+            estado: true,
+            mensagem: "Login realizado com sucesso"
+        });
+    } else {
+        res.json({
+            estado: false,
+            mensagem: "E-mail ou senha inválidos"
+        });
+         }
 })
 
 

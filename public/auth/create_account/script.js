@@ -2,7 +2,7 @@ let valoremail = document.querySelector("#email")
 let valorsenha = document.querySelector("#password")
 let confirmasenha = document.querySelector("#confirm_password")
 let button = document.querySelector(".enviar")
-
+let body = document.querySelector("body")
 
 button.addEventListener("click",()=>{
 if(validadaDados()){
@@ -66,8 +66,15 @@ const divsenha = document.querySelector(".senha");
   let dados = await resposta.json();
 
 console.log(dados)
-if(dados.estado === true){
-    window.location.href = "public/Clima/index.html"
+
+if (dados.estado === true) {
+    setTimeout(() => {
+        window.location.href = "https://api-clima-ijt0.onrender.com/Clima/index.html";
+    }, 3000);
+}
+
+else{
+ mostrarMensagem();
 }
 
     valoremail.value = ""
@@ -76,3 +83,19 @@ if(dados.estado === true){
 
 
  }
+
+ function mostrarMensagem() {
+    const card = document.createElement("div");
+const mensagem = document.createElement("p");
+
+card.classList.add("cardMensagem");
+
+mensagem.innerText = "Não foi possível criar a conta.";
+
+card.appendChild(mensagem);
+body.appendChild(card);
+
+setTimeout(() => {
+    card.remove();
+}, 3000);
+}
