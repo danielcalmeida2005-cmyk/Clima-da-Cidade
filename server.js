@@ -92,7 +92,7 @@ res.json({teste:"funcionou",
 
 
 // Fazer login
-app.post("/login",(req,res)=>{
+app.get("/login",(req,res)=>{
     const {email,senha} = req.body
 
     const usuario = db.prepare(`SELECT * FROM usuarios

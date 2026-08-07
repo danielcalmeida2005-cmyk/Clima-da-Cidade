@@ -69,7 +69,7 @@ console.log(dados)
 
 if (dados.estado === true) {
     setTimeout(() => {
-        window.location.href = "https://api-clima-ijt0.onrender.com/Clima/index.html";
+        window.location.href = "https://api-clima-ijt0.onrender.com/Clima/clima.html";
     }, 3000);
 }
 
