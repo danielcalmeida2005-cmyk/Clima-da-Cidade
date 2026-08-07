@@ -61,7 +61,7 @@ body: JSON.stringify({
 
 if (dados.estado === true) {
     setTimeout(() => {
-        window.location.href = "https://api-clima-ijt0.onrender.com/Clima/index.html";
+        window.location.href = "https://api-clima-ijt0.onrender.com/clima.html";
     }, 3000);
 }
 
