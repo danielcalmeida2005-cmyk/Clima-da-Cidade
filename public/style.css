@@ -148,16 +148,17 @@ input::placeholder{
     font-size: 1.4em;
 }
 
-.campoInput a{
-text-align: start;
+ a{
+    margin-top: 10px;
+text-align: end;
 color: white;
 text-decoration: none;
 transition: .4s;
-margin: 0px 0px 10px 0px;
+
 font-size: 1.1em;
 }
 
-.campoInput a:hover{
+ a:hover{
     color: var(--text-secondary)
 }
 
