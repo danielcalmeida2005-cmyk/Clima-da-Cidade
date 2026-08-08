@@ -64,15 +64,17 @@ body: JSON.stringify({
 
 
     });
-  let texto = await respostadoBack.text();
+  let dados = await respostadoBack.json();
 
-console.log("Status:", respostadoBack.status);
-console.log("Resposta:", texto);
+
+
+  console.log(dados)
+
 console.log("1")
-// if (dados.estado === true) {
+if (dados.estado === true) {
     
-//           window.location.href = "https://api-clima-ijt0.onrender.com/Clima/clima.html";
+          window.location.href = "https://api-clima-ijt0.onrender.com/Clima/clima.html";
    
-// }
+}
 
 }
