@@ -324,7 +324,7 @@ function informacoesAdicionais(resposta) {
 const temas = [
     {
         nome: "Azul",
-        fundo: "linear-gradient(180deg, #0F2027 0%, #2C5364 50%, #00C6FF 100%)",
+        fundo: "linear-gradient( #0F2027 0%, #2C5364 50%, #00C6FF 100%)",
         painel: "#D9ECFF",
         texto: "#172033",
         destaque: "#00C6FF"
@@ -332,7 +332,7 @@ const temas = [
 
     {
         nome: "Cinza",
-        fundo: "linear-gradient(180deg, #232526 0%, #414345 50%, #7F8C8D 100%)",
+        fundo: "linear-gradient( #232526 0%, #414345 50%, #7F8C8D 100%)",
         painel: "#DEE1E5",
         texto: "#202124",
         destaque: "#AAB2B8"
@@ -340,7 +340,7 @@ const temas = [
 
     {
         nome: "Verde",
-        fundo: "linear-gradient(180deg, #0B3D2E 0%, #126E51 50%, #00C878 100%)",
+        fundo: "linear-gradient( #0B3D2E 0%, #126E51 50%, #00C878 100%)",
         painel: "#D6F0E3",
         texto: "#17352A",
         destaque: "#00C878"
@@ -348,7 +348,7 @@ const temas = [
 
     {
         nome: "Roxo",
-        fundo: "linear-gradient(180deg, #240046 0%, #5A189A 50%, #9D4EDD 100%)",
+        fundo: "linear-gradient( #240046 0%, #5A189A 50%, #9D4EDD 100%)",
         painel: "#E3DAFF",
         texto: "#2B2145",
         destaque: "#9D4EDD"
