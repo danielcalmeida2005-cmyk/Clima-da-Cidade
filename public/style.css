@@ -27,19 +27,20 @@
 body{
     min-height: 100vh;
     width: 100%;
-   overflow-x: hidden;
+   overflow-y: hidden;
     color: #fff;
    backdrop-filter: blur(5px);
     background: url(https://plus.unsplash.com/premium_photo-1669047670760-9514552cad51?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
+  
 }
 
 main{
     
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,16 +168,6 @@ font-size: 1.1em;
     justify-content: center;
 }
 
-
-
-.enviar i{
-    position: absolute;
-   top: 9px;
-   right: 10px;
-   font-size: 20px;
-}
-
-
 .enviar{
     position: relative;
     background:var(--primary);
@@ -188,6 +179,16 @@ font-size: 1.1em;
     border-radius: 8px;
     transition: .7s;
 }
+
+.enviar i{
+    position: absolute;
+   top: 9px;
+   right: 10px;
+   font-size: 20px;
+}
+
+
+
 
 .enviar:hover{
    
@@ -263,9 +264,7 @@ right: -14px;
 
 
 @media (min-width: 1200px) {
-   body{
-    height: 100vh;
-   }
+   
 
    main{
     width: 100%;
