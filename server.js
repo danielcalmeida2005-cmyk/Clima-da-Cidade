@@ -81,23 +81,21 @@ res.json({teste:"funcionou",
  
 })
 
-
-
-
-
-
   
 })
 
 
 
 // Fazer login
-app.get("/login",(req,res)=>{
-    const {email,senha} = req.body
+app.post("/login", (req, res) => {
+    const { email, senha } = req.body;
 
-    const usuario = db.prepare(`SELECT * FROM usuarios
-        WHERE email = ? AND senha = ?`
-    ).get(email,senha)
+    console.log("Login recebido:", req.body);
+
+    const usuario = db.prepare(`
+        SELECT * FROM usuarios
+        WHERE email = ? AND senha = ?
+    `).get(email, senha);
 
     if (usuario) {
         res.json({
@@ -109,9 +107,8 @@ app.get("/login",(req,res)=>{
             estado: false,
             mensagem: "E-mail ou senha inválidos"
         });
-         }
-})
-
+    }
+});
 
 const PORT = process.env.PORT || 3000;
 

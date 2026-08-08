@@ -5,17 +5,18 @@ let buttonEnviar = document.querySelector(".enviar")
 
 
 
-buttonEnviar.addEventListener("click",(e)=>{
-     e.preventDefault();
+buttonEnviar.addEventListener("click",()=>{
+   
      
       if (validaDados()) {
-        enviarDados();
+        enviarDados()
     }
 })
 function validaDados() {
     let valorEmail = email.value.trim();
     let valorSenha = senha.value.trim();
 const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 if (valorEmail === "") {
     const divEmail = document.querySelector(".email");
 
@@ -24,11 +25,13 @@ if (valorEmail === "") {
     setTimeout(() => {
         divEmail.classList.remove("treme");
     }, 300);
-    return
+
+    return 
 }
 else{
     if(!regexEmail.test(valorEmail)){
-        return
+
+        return 
     }
 }
 
@@ -40,29 +43,36 @@ if (valorSenha === "") {
     setTimeout(() => {
         divsenha.classList.remove("treme");
     }, 300);
-    return
+
+    return 
 }
 
     console.log("Dados válidos!");
-}
 
+     return true
+}
+console.log("teste")
 async function enviarDados() {
- 
-    let respostadoBack = await fetch('https://api-clima-ijt0.onrender.com/login',{
+ console.log("1")
+    let respostadoBack = await fetch("https://api-clima-ijt0.onrender.com/login", {
         method: "POST",
-        header:{"content-Type":"application/json"},
+        headers:{"content-Type":"application/json"},
 body: JSON.stringify({
     email:email.value,
     senha:senha.value
 })
-    });
-     
-    let dados = await respostadoBack.json()
 
-if (dados.estado === true) {
-    setTimeout(() => {
-        window.location.href = "https://api-clima-ijt0.onrender.com/clima.html";
-    }, 3000);
-}
+
+    });
+  let texto = await respostadoBack.text();
+
+console.log("Status:", respostadoBack.status);
+console.log("Resposta:", texto);
+console.log("1")
+// if (dados.estado === true) {
+    
+//           window.location.href = "https://api-clima-ijt0.onrender.com/Clima/clima.html";
+   
+// }
 
 }
