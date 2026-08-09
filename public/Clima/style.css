@@ -475,9 +475,9 @@ border-radius: 20px;
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
-/* Destaque ao passar o mouse na seta */
+
 .caixaMenu i:hover {
-    color: #00d2ff; /* Tom azul neon para combinar com os detalhes do dashboard */
+    color: #00d2ff;
     transform: scale(1.15);
 }
 
@@ -497,6 +497,81 @@ display: flex;
 font-weight: 700;
     margin: 10px 0px 10px 0px;
 }
+
+
+@media(min-width:768px){
+
+    .painel{
+       
+       gap: 10px;
+    }
+
+
+    .climaHora{
+     gap: 0px;
+     
+   
+      display: flex;
+     
+      
+    }
+.climaHora:not(:last-child)::before {
+    height: 100%;
+    right: -50px;
+    
+}
+
+.cards{
+    justify-content: space-around;
+}
+
+.hora{
+   font-size: 3em;
+}
+
+.cards .icone{
+  font-size: 4em;
+}
+
+}
+
+
+@media(min-width:900px){
+
+    .painel{
+       
+       gap: 10px;
+    }
+
+
+    .climaHora{
+     gap: 0px;
+     
+   
+      display: flex;
+     
+      
+    }
+.climaHora:not(:last-child)::before {
+    height: 100%;
+    right: -70px;
+    
+}
+
+.cards{
+    justify-content: space-around;
+}
+
+.hora{
+   font-size: 3em;
+}
+
+.cards .icone{
+  font-size: 4em;
+}
+
+}
+
 
 
 
@@ -700,42 +775,4 @@ main{
 }
 
 }
-
-@media(max-width:900px){
-
-    .painel{
-       
-       gap: 10px;
-    }
-
-
-    .climaHora{
-     gap: 0px;
-     
-   
-      display: flex;
-     
-      
-    }
-.climaHora:not(:last-child)::before {
-    height: 100%;
-    right: -20px;
-    
-}
-
-.cards{
-    justify-content: space-around;
-}
-
-.hora{
-   font-size: 2em;
-}
-
-.cards .icone{
-  font-size: 4em;
-}
-
-}
-
-
 
