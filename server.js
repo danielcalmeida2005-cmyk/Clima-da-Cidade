@@ -1,7 +1,9 @@
 
 const express = require("express");
 require("dotenv").config();
+import path from ("path")
 
+app.use(express.static(path.join(__dirname,"public")))
 
 const apiKey = process.env.OPENWEATHER_KEY;
 
