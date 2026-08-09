@@ -1,8 +1,28 @@
-const Database = require("better-sqlite3")
 
-const path = require("path");
+import Database from 'better-sqlite3';
+import path from 'path';
+import { fileURLToPath } from 'url'; 
 
-const caminhoBanco = path.join(__dirname, "database.db");
 
-const db = new Database(caminhoBanco)
-module.exports = db
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
+const caminhoBanco = path.join(__dirname, 'database.db');
+const db = new Database(caminhoBanco);
+
+export default db;
+
+
+
+
+// import Database from "better-sqlite3"
+
+// import path from "path";
+
+// const caminhoBanco = path.join(__dirname, "database.db");
+
+// const db = new Database(caminhoBanco)
+
+// export default db
+

@@ -1,12 +1,14 @@
+import cors  from "cors";
+import express from "express";
+import dotenv from "dotenv"
 
-const express = require("express");
-require("dotenv").config();
+dotenv.config();
 
 
 const apiKey = process.env.OPENWEATHER_KEY;
 
 
-const cors = require("cors");
+
 const app = express()
 app.use(cors());
 app.use(express.static("public"));
@@ -55,18 +57,22 @@ console.log("Rota nova executada");
 
 // Rota para banco de dados
 
-const db = require("./database/db")
+import db from "./database/db.js"
 
-db.exec(`CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT,nome TEXT,email TEXT UNIQUE,senha TEXT)`)
+db.exec(`CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT,email TEXT UNIQUE,senha TEXT)`)
 
 console.log("SERVIDOR ATUALIZADO");
 // create account
 app.post("/cadastro",(req,res)=>{
 
+
      console.log("ROTA CADASTRO NOVA");
 console.log(req.body);
 const {email, senha } = req.body;
 
+console.log(email);
+    console.log(senha);
 const comando = db.prepare(` INSERT INTO usuarios (email,senha)
     VALUES (?,?)
     `)
