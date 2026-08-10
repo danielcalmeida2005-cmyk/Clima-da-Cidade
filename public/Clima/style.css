@@ -48,7 +48,7 @@ body {
 
 main{
     width: 100%;
-    min-height: 100%;
+    height: 100%;
 display: grid;
    grid-template-columns: 80px 1fr;
    gap: 20px;
@@ -65,7 +65,7 @@ aside{
     flex-direction: column;
     align-items: center;
     gap: 40px;
-  
+  height: 100%;
    
     
 }
@@ -158,12 +158,11 @@ transform: rotate(180deg);
    
 
 }
-.fa-magnifying-glass{
+.background i{
    display: flex;
    align-items: center;
    justify-content: center;
-    height: 50px;
-    width: 50px;
+  font-size: 1.6em;
     border-radius: 10px;
     transition: .5s;
 
@@ -195,18 +194,19 @@ color: #fff;
    
 }
 .resultado h2{
+    text-wrap: nowrap;
     text-shadow: 1px 2px 1px black;
-    font-size: 2em;
+    font-size: 2.5em;
     
 }
 
 .resultado p{
     text-shadow: 1px 2px 1px black;
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 600;
 }
 .Graus{
-    font-size: 2.3em;
+    font-size: 2.6em;
      text-shadow: 1px 2px 1px black;
 }
 
@@ -251,19 +251,19 @@ color: #fff;
     width: 2px;
 }
 .climaHora .hora{
-    font-size: 1.4em;
+    font-size: 2em;
     font-weight: 700;
 }
 
 
 .climaHora img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
 }
 
 
 .climaHora .temperatura{
-    font-size: 1.5em;
+    font-size: 2em;
      font-weight: 700;
 }
 
