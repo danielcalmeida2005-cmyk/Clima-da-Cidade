@@ -64,7 +64,7 @@ db.exec(`CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREME
 
 console.log("SERVIDOR ATUALIZADO");
 // create account
-app.post("/cadastro",(req,res)=>{
+app.post("/cadastro", async(req,res)=>{
 
 
      console.log("ROTA CADASTRO NOVA");
@@ -80,7 +80,7 @@ const comando = db.prepare(` INSERT INTO usuarios (email,senha)
     VALUES (?,?)
     `)
 
-comando.run(email, senha);
+comando.run(email, hashedPassword);
 console.log("Salvou no banco");
 
 res.json({teste:"funcionou",
