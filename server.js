@@ -1,7 +1,7 @@
 import cors  from "cors";
 import express from "express";
 import dotenv from "dotenv"
-
+import bcrypt from "bcrypt"
 dotenv.config();
 
 
@@ -71,6 +71,9 @@ app.post("/cadastro",(req,res)=>{
 console.log(req.body);
 const {email, senha } = req.body;
 
+const salt = await bcrypt.genSalt(10);
+const hashedPassword = await bcrypt.hash(senha, salt);
+
 console.log(email);
     console.log(senha);
 const comando = db.prepare(` INSERT INTO usuarios (email,senha)
@@ -93,17 +96,27 @@ res.json({teste:"funcionou",
 
 
 // Fazer login
-app.post("/login", (req, res) => {
+
+app.post("/login", async (req, res) => {
     const { email, senha } = req.body;
 
     console.log("Login recebido:", req.body);
 
     const usuario = db.prepare(`
         SELECT * FROM usuarios
-        WHERE email = ? AND senha = ?
-    `).get(email, senha);
+        WHERE email = ?
+    `).get(email);
 
-    if (usuario) {
+    if (!usuario) {
+        return res.json({
+            estado: false,
+            mensagem: "E-mail ou senha inválidos"
+        });
+    }
+
+    const senhaCorreta = await bcrypt.compare(senha, usuario.senha);
+
+    if (senhaCorreta) {
         res.json({
             estado: true,
             mensagem: "Login realizado com sucesso"
@@ -115,6 +128,7 @@ app.post("/login", (req, res) => {
         });
     }
 });
+
 
 const PORT = process.env.PORT || 3000;
 

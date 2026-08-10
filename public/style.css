@@ -66,10 +66,10 @@ section h1{
 
 
 form{
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 }
 
 label{
@@ -201,7 +201,7 @@ font-size: 1.1em;
     position: absolute;
     content: "";
     top: 50%;
-left: -14px;
+left: -10px;
     width: 30%;
     height: 1px;
 }
@@ -219,8 +219,8 @@ left: -14px;
     position: absolute;
     content: "";
     top: 50%;
-right: -20px;
-    width: 3px;
+right: -10px;
+    width: 30%;
     height: 1px;
 }
 
@@ -255,7 +255,7 @@ right: -20px;
 }
 
 .create{
-    margin-top:40px;
+    margin-top:50px;
     text-align: center;
     font-size: 1.2em;
     font-weight: 400;
@@ -280,6 +280,11 @@ form{
 .continue{
     margin:20px 0px 20px 0px;
 }
+
+
+
+
+
 
 }
 
@@ -346,32 +351,6 @@ label{
 
 
 
-
-.continue::after{
-    background-color: white;
-    position: absolute;
-    content: "";
-    top: 50%;
-left: -10px;
-    width: 35%;
-    height: 1px;
-    opacity: 0.3;
-}
-.continue{
-    font-size: 1.4em;
-    margin: 24px 0px 16px 0px;
-}
-
-.continue::before{
-    background-color: white;
-    position: absolute;
-    content: "";
-    top: 50%;
-right: -10px;
-    width: 35%;
-    height: 1px;
-    opacity: 0.3;
-}
 .enviar{
     border-radius: 8px;
 }
