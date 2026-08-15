@@ -1,56 +1,55 @@
-let valoremail = document.querySelector("#email")
-let valorsenha = document.querySelector("#password")
-let confirmasenha = document.querySelector("#confirm_password")
-let button = document.querySelector(".enviar")
-let body = document.querySelector("body")
+console.log("SCRIPT CARREGOU");
 
-button.addEventListener("click",()=>{
-if(validadaDados()){
-   enviarDados() 
-}
-    
-})
-function validadaDados(){
+let valoremail = document.querySelector("#email");
+let valorsenha = document.querySelector("#password");
+let checkbox = document.querySelector("#termos");
+let button = document.querySelector(".enviar");
+
+
+button.addEventListener("click", () => {
+    if (validadaDados()) {
+        enviarDados();
+    }
+});
+
+function validadaDados() {
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    let email = valoremail.value
-    let password = valorsenha.value
-    let confirmPassword = confirmasenha.value
 
-    if(email === "" || !regexEmail.test(email) ){
-const divEmail = document.querySelector(".email");
+    let email = valoremail.value;
+    let password = valorsenha.value;
 
-    divEmail.classList.add("treme");
+    if (email === "" || !regexEmail.test(email)) {
+        const divEmail = document.querySelector(".email");
 
-    setTimeout(() => {
-    divEmail.classList.remove("treme");
-}, 300);
-    return false;
+        divEmail.classList.add("treme");
+
+        setTimeout(() => {
+            divEmail.classList.remove("treme");
+        }, 300);
+
+        return false;
     }
 
-    if(password === "" || password !== confirmPassword){
-const divsenha = document.querySelector(".senha");
+    if (password === "") {
+        const divSenha = document.querySelector(".senha");
 
-    divsenha.classList.add("treme");
+        divSenha.classList.add("treme");
 
-    setTimeout(() => {
-    divsenha.classList.remove("treme");
-}, 300);
+        setTimeout(() => {
+            divSenha.classList.remove("treme");
+        }, 300);
 
-  return false;
+        return false;
     }
 
-    if(confirmPassword === ""){
-       const divsenha = document.querySelector(".confirmSenha");
-
-    divsenha.classList.add("treme"); 
-
-    setTimeout(() => {
-    divsenha.classList.remove("treme");
-}, 300);
-  return false;
+    if (!checkbox.checked) {
+        return false;
     }
-    return true
+
+    return true;
 }
+   
+
  async function enviarDados() {
     let resposta = await fetch("https://api-clima-ijt0.onrender.com/cadastro",{
         method:"POST",
