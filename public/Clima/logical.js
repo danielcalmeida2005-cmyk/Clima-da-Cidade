@@ -1,10 +1,7 @@
 
 let body = document.querySelector("body")
 
-// body.addEventListener("click",()=>{
-//      conteudo.classList.remove("aparece");
-// })
-//  Data
+
 
 const data = new Date();
 const dia = String(data.getDate()).padStart(2, "0");
@@ -13,7 +10,7 @@ const ano = data.getFullYear();
 
 const DataCompleta = `${dia}/${mes}/${ano}`;
 
-// 
+
 
 
 
@@ -324,7 +321,7 @@ function informacoesAdicionais(resposta) {
 const temas = [
     {
         nome: "Azul",
-        fundo: "linear-gradient( #0F2027 0%, #2C5364 50%, #00C6FF 100%)",
+        fundo: "#0F2027",
         painel: "#D9ECFF",
         texto: "#172033",
         destaque: "#00C6FF"
@@ -332,7 +329,7 @@ const temas = [
 
     {
         nome: "Cinza",
-        fundo: "linear-gradient( #232526 0%, #414345 50%, #7F8C8D 100%)",
+        fundo: "#232526",
         painel: "#DEE1E5",
         texto: "#202124",
         destaque: "#AAB2B8"
@@ -340,7 +337,7 @@ const temas = [
 
     {
         nome: "Verde",
-        fundo: "linear-gradient( #0B3D2E 0%, #126E51 50%, #00C878 100%)",
+        fundo: "#0B3D2E",
         painel: "#D6F0E3",
         texto: "#17352A",
         destaque: "#00C878"
@@ -348,7 +345,7 @@ const temas = [
 
     {
         nome: "Roxo",
-        fundo: "linear-gradient( #240046 0%, #5A189A 50%, #9D4EDD 100%)",
+        fundo: "#240046",
         painel: "#E3DAFF",
         texto: "#2B2145",
         destaque: "#9D4EDD"
@@ -359,7 +356,6 @@ const temas = [
         fundo: mostraImagem
     }
 ];
-
 let caixa = document.createElement("div");
 caixa.classList.add("caixaMenu");
 
@@ -434,7 +430,7 @@ PTema.style.color = temaAtual.destaque
 //  cria o card e setas,trasnfom
 
 // cria uma funcao que vai pecorre os valores
-// croia dois button que faz um for menos leghnt para sabe se vai mostra o valor de cima ou de baixo
+// cria dois button que faz um for menos leghnt para sabe se vai mostra o valor de cima ou de baixo
 // cria uma funcao que atualiza as imagem
 // um evento de click na imagem selecionada
 
