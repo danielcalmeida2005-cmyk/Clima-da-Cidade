@@ -1,4 +1,4 @@
-console.log("SCRIPT CARREGOU");
+console.log("SCRIPT CARREGOOOOU");
 
 let valoremail = document.querySelector("#email");
 let valorsenha = document.querySelector("#password");
@@ -62,10 +62,11 @@ function validadaDados() {
         })
     })
 
-  let dados = await resposta.json();
+let texto = await resposta.text();
 
-console.log(dados)
-
+console.log("STATUS:", resposta.status);
+console.log("TIPO:", resposta.headers.get("content-type"));
+console.log("RESPOSTA:", texto);
 if (dados.estado === true) {
   
         window.location.href = "https://api-clima-ijt0.onrender.com/Clima/clima.html";
