@@ -1,33 +1,15 @@
 @import url("../../style.css");
 
-
+ 
 .instruction{
-    margin-bottom: 20px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 
-p{
-     font-size: 15px;
+ol{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-ul{
-     font-size: 14px;
-text-align: center;}
-
-li {
-    margin-bottom: 8px;
-}
-
-.enviar{
-  margin-top: 50px;
-}
-
-.create{
-  margin-top: 10px;
-  color: rgba(255,255,255 , 0.85);
-
-gap: 10px;
-  opacity: 80%;
-}
-
-

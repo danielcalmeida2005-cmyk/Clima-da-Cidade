@@ -2,25 +2,25 @@
 
 
 
-.enviar{
-  margin-top: 40px;
-}
 
-.create{
+.checkbox {
   margin-top: 10px;
-  color: #ffffff;
-  opacity: 80%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-
-@media (min-width: 1200px){
-  section h1{
-    margin-top: 10px;
+.checkbox input {
+    width: 16px;
+    height: 16px;
 }
 
-.input{
-    margin-bottom: 10px;
+.checkbox label {
+    font-size: 0.95rem;
+    cursor: pointer;
 }
 
+.checkbox label a{
  
+  font-weight: 600;
 }
