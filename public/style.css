@@ -78,7 +78,7 @@ main {
 
 
 form {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -163,7 +163,7 @@ input::placeholder {
 }
 
 a {
-    margin: 20px 0px 20px 0px;
+    margin: 10px 0px 10px 0px;
     text-align: end;
     color: #ffffff;
     text-decoration: none;
@@ -214,7 +214,7 @@ a {
     align-items: center;
     gap: 15px;
 
-    margin: 20px 0px 20px 0px;
+    margin: 10px 0px 10px 0px;
 
     font-size: 18px;
     color: var(--text);
@@ -235,7 +235,7 @@ a {
 
 
 .altenative {
-    margin: 20px 0px 20px 0px;
+    margin: 10px 0px 10px 0px;
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -276,6 +276,7 @@ a {
     text-decoration: none;
     color: rgb(255, 136, 0);
 }
+
 
 
 

@@ -1,0 +1,18 @@
+*{
+    margin:0px ;
+    padding: 0px;
+}
+
+body {
+    background: #181a1d;
+    color: #e5e7eb;
+}
+
+
+
+article{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
