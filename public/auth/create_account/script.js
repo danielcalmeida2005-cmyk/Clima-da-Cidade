@@ -78,9 +78,7 @@ else{
 
     valoremail.value = ""
     valorsenha.value = ""
-    confirmasenha.value = ""
-
-
+   
  }
 
  function mostrarMensagem() {
