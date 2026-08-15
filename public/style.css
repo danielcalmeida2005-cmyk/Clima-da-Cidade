@@ -299,7 +299,7 @@ a {
         overflow: hidden;
     }
 
-    .login {
+    .containerPai {
         width: 100%;
         height: 100%;
 
@@ -308,46 +308,32 @@ a {
 
     .imagemdesktop {
         display: block;
-
         width: 400px;
         height: 600px;
-
         overflow: hidden;
-
         border-radius: 10px 0 0 10px;
-
         box-shadow: 8px 0 20px rgba(0, 0, 0, 0.25);
         z-index: 2;
-    }
-
-    .imagemdesktop img {
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
+        background-image: url(https://i.pinimg.com/736x/7f/39/f2/7f39f24222d01233cd9465b3d904aad7.jpg);
+    object-fit: cover;
         display: block;
-    }
+    background-position: center;}
+
+  
 
     .container {
         width: 600px;
         height: 700px;
-
-       
-
         display: flex;
         flex-direction: column;
-
         background-color: #182022;
-
         border-radius: 0 10px 10px 0;
     }
 
     .container h1 {
         text-align: center;
-
         margin-top: 10px;
         margin-bottom: 5px;
-
         font-size: 2.5rem;
     }
 

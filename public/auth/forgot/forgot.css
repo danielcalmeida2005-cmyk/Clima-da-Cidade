@@ -6,11 +6,19 @@
   text-align: center;
 }
 
+.campoInput{
+  margin-top: 10px;
+}
 
 ol{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+ 
+ align-items: center;
+  
 }
 
+
+.campoButton{
+  margin-top: 20px;
+}

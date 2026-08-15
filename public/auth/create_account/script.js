@@ -50,37 +50,32 @@ function validadaDados() {
 }
    
 
- async function enviarDados() {
-    let resposta = await fetch("https://api-clima-ijt0.onrender.com/cadastro",{
-        method:"POST",
-       headers:{
-    "Content-Type":"application/json"
-},
+async function enviarDados() {
+    let resposta = await fetch("https://api-clima-ijt0.onrender.com/cadastro", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify({
-          email:valoremail.value,
-          senha:valorsenha.value 
+            email: valoremail.value,
+            senha: valorsenha.value
         })
-    })
+    });
 
-let texto = await resposta.text();
+    let dados = await resposta.json();
 
-console.log("STATUS:", resposta.status);
-console.log("TIPO:", resposta.headers.get("content-type"));
-console.log("RESPOSTA:", texto);
-if (dados.estado === true) {
-  
-        window.location.href = "https://api-clima-ijt0.onrender.com/Clima/clima.html";
-    
+    console.log(dados);
+
+    if (dados.estado === true) {
+        window.location.href =
+            "https://api-clima-ijt0.onrender.com/Clima/clima.html";
+    } else {
+        mostrarMensagem();
+    }
+
+    valoremail.value = "";
+    valorsenha.value = "";
 }
-
-else{
- mostrarMensagem();
-}
-
-    valoremail.value = ""
-    valorsenha.value = ""
-   
- }
 
  function mostrarMensagem() {
     const card = document.createElement("div");
