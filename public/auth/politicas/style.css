@@ -17,8 +17,9 @@ article{
     padding: 20px;
 }
 
-#termos{
-    text-align: center;
+#termos,#diretrizes h1{
+    margin-top: 10px;
+   text-align: center;
     color: #ffffff;
 }
 
@@ -30,7 +31,7 @@ section{
     color: #e0e0e0;
 }
 
-section h2{
+h2{
     margin: 10px 0px 10px 0px;
 }
 

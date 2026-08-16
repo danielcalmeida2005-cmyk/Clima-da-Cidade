@@ -64,34 +64,55 @@ db.exec(`CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREME
 
 console.log("SERVIDOR ATUALIZADO");
 // create account
-app.post("/cadastro", async(req,res)=>{
+// create account
+app.post("/cadastro", async (req, res) => {
 
+    console.log("BODY:", req.body)
+    try {
+        console.log("ROTA CADASTRO NOVA");
+        console.log(req.body);
+        const { email, senha } = req.body;
 
-     console.log("ROTA CADASTRO NOVA");
-console.log(req.body);
-const {email, senha } = req.body;
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(senha, salt);
 
-const salt = await bcrypt.genSalt(10);
-const hashedPassword = await bcrypt.hash(senha, salt);
+        console.log(email);
+        
+        
+        const comando = db.prepare(`
+            INSERT INTO usuarios (email, senha)
+            VALUES (?, ?)
+        `);
 
-console.log(email);
-    console.log(senha);
-const comando = db.prepare(` INSERT INTO usuarios (email,senha)
-    VALUES (?,?)
-    `)
+        
+        comando.run(email, hashedPassword);
+        console.log("Salvou no banco com sucesso!");
 
-comando.run(email, hashedPassword);
-console.log("Salvou no banco");
+       
+        res.json({
+            teste: "funcionou",
+            estado: true,
+            mensagem: "Usuário cadastrado com sucesso"
+        });
 
-res.json({teste:"funcionou",
-    estado:true,
-    mensagem:"usuario cadastrado com sucesso"
-   
- 
-})
+    } catch (error) {
+        console.error("Erro ao cadastrar:", error);
+        
+       
+        if (error.message.includes("UNIQUE constraint failed")) {
+            return res.status(400).json({
+                estado: false,
+                mensagem: "Este e-mail já está cadastrado."
+            });
+        }
 
-  
-})
+        res.status(500).json({
+            estado: false,
+            mensagem: "Erro interno no servidor ao cadastrar."
+        });
+    }
+});
+
 
 
 
