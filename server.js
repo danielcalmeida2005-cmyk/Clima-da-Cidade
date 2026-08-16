@@ -84,9 +84,13 @@ app.post("/cadastro", async (req, res) => {
             VALUES (?, ?)
         `);
 
-        
-        comando.run(email, hashedPassword);
-        console.log("Salvou no banco com sucesso!");
+        const resultado = comando.run(email, hashedPassword);
+
+console.log("RESULTADO DO INSERT:", resultado);
+
+const usuarios = db.prepare("SELECT * FROM usuarios").all();
+
+console.log("USUÁRIOS NO BANCO:", usuarios);
 
        
         res.json({
