@@ -84,20 +84,14 @@ app.post("/cadastro", async (req, res) => {
             VALUES (?, ?)
         `);
 
-       comando.run(email, hashedPassword);
-
-return res.json({
-    etapa: "CHEGOU NO INSERT"
-});
+    const resultado = comando.run(email, hashedPassword);
 
 const usuarios = db.prepare("SELECT * FROM usuarios").all();
 
-
-
 res.json({
-    teste: "SERVIDOR LOCAL",
-    estado: true,
-    mensagem: "ESTA RESPOSTA VEIO DO MEU PC"
+    etapa: "TESTE BANCO",
+    resultado: resultado,
+    usuarios: usuarios
 });
        
         // res.json({
