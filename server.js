@@ -84,13 +84,14 @@ app.post("/cadastro", async (req, res) => {
             VALUES (?, ?)
         `);
 
-        const resultado = comando.run(email, hashedPassword);
+       comando.run(email, hashedPassword);
 
-console.log("RESULTADO DO INSERT:", resultado);
+return res.json({
+    etapa: "CHEGOU NO INSERT"
+});
 
 const usuarios = db.prepare("SELECT * FROM usuarios").all();
 
-console.log("USUÁRIOS NO BANCO:", usuarios);
 
 
 res.json({
