@@ -51,6 +51,7 @@ function validadaDados() {
    
 
 async function enviarDados() {
+     console.log("ENVIOU PARA O BACKEND");
     let resposta = await fetch("https://api-clima-ijt0.onrender.com/cadastro", {
         method: "POST",
         headers: {
