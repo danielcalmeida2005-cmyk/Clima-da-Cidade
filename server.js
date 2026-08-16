@@ -92,12 +92,18 @@ const usuarios = db.prepare("SELECT * FROM usuarios").all();
 
 console.log("USUÁRIOS NO BANCO:", usuarios);
 
+
+res.json({
+    teste: "SERVIDOR LOCAL",
+    estado: true,
+    mensagem: "ESTA RESPOSTA VEIO DO MEU PC"
+});
        
-        res.json({
-            teste: "funcionou",
-            estado: true,
-            mensagem: "Usuário cadastrado com sucesso"
-        });
+        // res.json({
+        //     teste: "funcionou",
+        //     estado: true,
+        //     mensagem: "Usuário cadastrado com sucesso"
+        // });
 
     } catch (error) {
         console.error("Erro ao cadastrar:", error);
